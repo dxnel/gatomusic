@@ -234,7 +234,7 @@ const closeModal = () => {
   z-index: 2; /* Permet à l'image survolée de passer par-dessus les autres */
 }
 
-.visuals-section { margin-top: 40px; }
+.visuals-section { margin-top: 30px; }
 .bts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
 @media (min-width: 900px) { .bts-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; } }
 .bts-item { display: flex; flex-direction: column; }

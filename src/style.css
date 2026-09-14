@@ -684,6 +684,14 @@ a { text-decoration: none; color: inherit; }
 .grid-discographie .release-card:nth-child(4), .artist-grid .release-card:nth-child(4) { animation-delay: 0.38s; }
 .grid-discographie .release-card:nth-child(n+5), .artist-grid .release-card:nth-child(n+5) { animation-delay: 0.48s; }
 
+/* --- GESTION DES BOUTONS DE RELEASE (Par défaut : mode PC) --- */
+.mobile-buttons {
+  display: none !important; /* Caché sur PC */
+}
+.desktop-buttons {
+  display: flex !important; /* Affiché sur PC */
+}
+
 /* =========================================
    10. RESPONSIVE MOBILE (SMARTPHONES)
    ========================================= */
@@ -745,5 +753,19 @@ a { text-decoration: none; color: inherit; }
   
   .stat-number { 
     font-size: 3rem; /* Légèrement plus contenu */
+  }
+
+  /* On inverse l'affichage des boutons de release sur Mobile */
+  .desktop-buttons {
+    display: none !important;
+  }
+  .mobile-buttons {
+    display: flex !important;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .vue-main-layout {
+    padding-top: 15px; /* Au lieu de 40px sur PC */
   }
 }
