@@ -727,14 +727,32 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 30px; 
   }
 
-  /* 3. LE BLOC NEW RELEASE (HERO) DEVIENT UN RECTANGLE */
+  /* BANNIÈRE HORIZONTALE COMPACTE POUR MOBILE */
   .hero { 
-    min-height: auto; /* Casse l'effet "carré géant" */
-    padding: 60px 15px; /* Équilibre le haut et le bas */
+    min-height: 200px !important; 
+    height: auto !important;
+    aspect-ratio: auto !important;
+    padding: 30px 15px !important;
     margin-bottom: 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+  .hero-content { 
+    padding: 0 !important; 
+    width: 100%;
+  }
+
   .hero-title { 
-    font-size: 2.5rem; /* Réduit la taille du titre "LOSER" */
+    font-size: 2rem !important; 
+    margin: 0 0 10px 0 !important; 
+  }
+
+  .hero-desc {
+    font-size: 0.8rem !important;
+    margin-bottom: 15px !important;
   }
 
   /* 4. LES STATS "WHAT IS GATO?" SONT PARFAITEMENT ALIGNÉES */
