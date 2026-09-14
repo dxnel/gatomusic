@@ -8,6 +8,17 @@ const allArtists = ref(database.artists)
 
 const labelRoster = computed(() => allArtists.value.filter(a => !a.type.toLowerCase().includes("distribution")))
 const distroRoster = computed(() => allArtists.value.filter(a => a.type.toLowerCase().includes("distribution")))
+
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return ''
+  if (imagePath.startsWith('public') || imagePath.startsWith('http')) {
+    return imagePath.startsWith('public') ? imagePath.replace('public', '') : imagePath
+  }
+  if (imagePath.startsWith('src/assets/')) {
+    return new URL(`../assets/${imagePath.replace('src/assets/', '')}`, import.meta.url).href
+  }
+  return imagePath
+}
 </script>
 
 <template>
@@ -25,7 +36,7 @@ const distroRoster = computed(() => allArtists.value.filter(a => a.type.toLowerC
         <div class="artist-grid">
           <router-link v-for="artist in labelRoster" :key="artist.id" :to="'/artist/' + artist.id" class="release-card">
             <div class="artist-cover">
-              <img v-if="artist.image" :src="artist.image" :alt="artist.name">
+            <img v-if="artist.image" :src="getImageUrl(artist.image)" :alt="artist.name">
             </div>
             <div class="release-info">
               <h3>{{ artist.name }}</h3>
@@ -41,7 +52,7 @@ const distroRoster = computed(() => allArtists.value.filter(a => a.type.toLowerC
         <div class="artist-grid">
           <router-link v-for="artist in distroRoster" :key="artist.id" :to="'/artist/' + artist.id" class="release-card">
             <div class="artist-cover">
-              <img v-if="artist.image" :src="artist.image" :alt="artist.name">
+              <img v-if="artist.image" :src="getImageUrl(artist.image)" :alt="artist.name">
             </div>
             <div class="release-info">
               <h3>{{ artist.name }}</h3>
