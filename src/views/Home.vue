@@ -69,7 +69,7 @@ const getPlasticStyle = (id) => {
 
       <!-- Contenu du Hero -->
       <div class="hero-content">
-        <div class="hero-tag" v-if="hero.tag">{{ hero.tag }}</div>
+        <div class="hero-tag" v-if="hero.tag" v-html="hero.tag"></div>
         <h1 class="hero-title">{{ hero.title }}</h1>
         
         <!-- Petite description optionnelle -->
