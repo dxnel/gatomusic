@@ -59,7 +59,7 @@
     <footer class="pack-footer">
       <img src="./assets/GATO_LogoPPBlack-1000.png" alt="GATO Seal" class="footer-seal">
       <div class="contact-info">
-        MANUFACTURED BY GATO RECORDS <br>
+        MANUFACTURED BY GATO<br>
         SWITZERLAND<br>
         Made with love ● lyndxn, Head Of GATO<br>
         <a href="mailto:gatomusic.contact@gmail.com">gatomusic.contact@gmail.com</a><br>
