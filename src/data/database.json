@@ -52,11 +52,14 @@
       "name": "w0ndr",
       "type": "GATO Exclusive",
       "role": "Artist",
-      "desc": "Indie-Pop etc.",
+      "desc": "w0ndr is an independent artist pushing the boundaries of alternative pop.<br><br><strong>LATEST ERA:</strong><br>His new sonic direction involves heavy distortion mixed with ethereal vocals. Do not sleep on this.",
       "image": "/assets/losercoverv1.png",
       "socials": {
+        "spotify": "https://spotify.com/",
+        "youtube": "https://youtube.com/",
         "instagram": "https://instagram.com/",
-        "spotify": "https://spotify.com/"
+        "tiktok": "https://tiktok.com/"
+        
       }
     },
     {

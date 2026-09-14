@@ -31,6 +31,29 @@ const getImageUrl = (imagePath) => {
   }
   return imagePath
 }
+
+const getPlasticStyle = (id) => {
+  if (!id) return {}
+  let hash = 0
+  for (let i = 0; i < id.length; i++) hash = id.charCodeAt(i) + ((hash << 5) - hash)
+  const absHash = Math.abs(hash)
+  const rotations = [0, 90, 180, 270]
+  
+  return {
+    '--plastic-bg': `url('/assets/plastic${(absHash % 4) + 1}.jpeg')`,
+    '--plastic-transform': `rotate(${rotations[absHash % 4]}deg) scale(${(absHash % 2) === 0 ? 1 : -1}, ${(absHash % 3) === 0 ? 1 : -1})`
+  }
+}
+
+const getPlatformColor = (platform) => {
+  const p = platform.toLowerCase()
+  if (p === 'spotify') return '#1DB954'   // Vert Spotify
+  if (p === 'youtube') return '#FF0000'   // Rouge YouTube
+  if (p === 'tiktok') return 'var(--gato-black)' // Noir GATO pour TikTok
+  if (p === 'instagram') return '#E1306C' // Rose/Rouge Instagram
+  
+  return '' // Si ce n'est pas dans la liste, ça garde le rouge GATO par défaut
+}
 </script>
 
 <template>
@@ -51,13 +74,44 @@ const getImageUrl = (imagePath) => {
       <div class="split-info">
         <h1 class="split-title title-serif">{{ artist.name }}</h1>
         <h2 class="split-subtitle">{{ artist.role }}</h2>
-        <p class="split-desc">{{ artist.desc || 'NO DESCRIPTION AVAILABLE YET.' }}</p>
+        <p class="split-desc" v-html="artist.desc || 'NO DESCRIPTION AVAILABLE YET.'"></p>
 
         <div style="display: flex; gap: 10px; flex-wrap: wrap;" v-if="artist.socials">
-          <a v-for="(link, platform) in artist.socials" :key="platform" :href="link" target="_blank" class="gato-btn social-btn">
-            {{ platform }} ↗
-          </a>
-        </div>
+  <a 
+    v-for="(link, platform) in artist.socials" 
+    :key="platform" 
+    :href="link" 
+    target="_blank" 
+    class="gato-btn social-btn"
+    :class="{ 'icon-only': ['spotify', 'instagram', 'youtube', 'tiktok'].includes(platform.toLowerCase()) }"
+    :style="{ backgroundColor: getPlatformColor(platform) }"
+  >
+    
+    <!-- ICÔNE SPOTIFY -->
+    <svg v-if="platform.toLowerCase() === 'spotify'" class="btn-icon" viewBox="0 0 256 256" width="24" height="24" fill="currentColor">
+      <path d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128c70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644c-30.053-18.357-67.885-22.515-112.44-12.335a7.98 7.98 0 0 1-9.552-6.007a7.97 7.97 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276c3.76 2.308 4.952 7.215 2.644 10.975m15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289c-34.406-21.148-86.853-27.273-127.548-14.92c-5.278 1.594-10.852-1.38-12.454-6.649c-1.59-5.278 1.386-10.842 6.655-12.446c46.485-14.106 104.275-7.273 143.787 17.007c4.692 2.89 6.175 9.034 3.286 13.72zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978c-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405c-3.362 5.69-10.73 7.565-16.4 4.187z"/>
+    </svg>
+
+    <!-- ICÔNE INSTAGRAM -->
+    <svg v-else-if="platform.toLowerCase() === 'instagram'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+
+    <!-- ICÔNE YOUTUBE -->
+    <svg v-else-if="platform.toLowerCase() === 'youtube'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+
+    <!-- ICÔNE TIKTOK -->
+    <svg v-else-if="platform.toLowerCase() === 'tiktok'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.53-.42 3.11-1.37 4.31-1.09 1.39-2.73 2.29-4.5 2.5-1.92.23-3.95-.12-5.5-1.29-1.55-1.16-2.58-2.9-2.9-4.78-.34-2.02.09-4.18 1.25-5.83 1.26-1.8 3.32-2.9 5.5-3.05v4.06c-1.07.13-2.14.7-2.76 1.59-.6.86-.81 1.95-.58 2.97.23 1.01.89 1.88 1.77 2.41 1.03.62 2.33.68 3.42.27 1.14-.42 2.01-1.4 2.29-2.57.1-.41.13-.84.14-1.27V.02z"/>
+    </svg>
+
+    <!-- FALLBACK (SI CE N'EST PAS DANS LA LISTE) : JUSTE LE TEXTE -->
+    <span v-else>{{ platform }}</span>
+
+  </a>
+</div>
       </div>
     </div>
 
@@ -69,7 +123,7 @@ const getImageUrl = (imagePath) => {
       
       <div class="grid-discographie">
         <router-link v-for="release in artistReleases" :key="release.id" :to="'/release/' + release.id" class="release-card">
-          <div class="cover-physique interactive-cover">
+          <div class="cover-physique interactive-cover" :style="getPlasticStyle(release.id)">
             <img v-if="release.cover" :src="getImageUrl(release.cover)" :alt="release.title">
             <span v-else>GATO</span>
           </div>

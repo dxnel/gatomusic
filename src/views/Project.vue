@@ -46,7 +46,7 @@ const closeModal = () => {
     <div class="project-details-grid">
       <div class="project-desc-col">
         <h3 class="section-mini-title">PROJECT OVERVIEW</h3>
-        <p class="split-desc">{{ project.desc || 'No description provided.' }}</p>
+       <p class="split-desc" v-html="project.desc || 'No description provided.'"></p>
         <div class="copyright-text" v-if="project.copyright" style="margin-top: 20px;">
           {{ project.copyright }}
         </div>

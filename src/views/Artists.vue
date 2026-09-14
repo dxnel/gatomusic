@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import database from '../data/database.json'
 
+
+
 const allArtists = ref(database.artists)
 
 const labelRoster = computed(() => allArtists.value.filter(a => !a.type.toLowerCase().includes("distribution")))

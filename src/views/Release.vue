@@ -82,7 +82,7 @@ const getPlasticStyle = (id) => {
           • {{ release.format }} • {{ release.release_date }}
         </h2>
         
-        <p class="split-desc" v-if="release.desc">{{ release.desc }}</p>
+        <p class="split-desc" v-if="release.desc" v-html="release.desc"></p>
 
         <div class="tracklist-section" v-if="release.tracklist?.length">
           <h3 class="section-mini-title">TRACKLIST</h3>

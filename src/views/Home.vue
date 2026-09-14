@@ -124,7 +124,7 @@ const getPlasticStyle = (id) => {
       <div class="section-header">
         <h2>LATEST RELEASES</h2>
         <router-link to="/discography" style="color: var(--gato-red); font-weight: bold; text-decoration: none;">
-          VIEW ALL ↗
+          VIEW ALL
         </router-link>
       </div>
 

@@ -62,11 +62,26 @@ a { text-decoration: none; color: inherit; }
 
 /* Bouton spécial vert pour la première action (ex: Bandcamp / Streaming principal) */
 .gato-btn.green-btn {
-  background-color: #2e8b57; /* Ou un vert "brutaliste" de ton choix (ex: #1db954, #4CAF50...) */
+  background-color: #1DB954; /* Ou un vert "brutaliste" de ton choix (ex: #1db954, #4CAF50...) */
   color: #fff;
   gap: 10px;
 }
 
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remplace ton ancienne classe par celle-ci pour en faire de vrais blocs carrés */
+.social-btn.icon-only {
+  width: 50px;           /* Largeur fixe */
+  height: 50px;          /* Hauteur fixe pour un carré parfait */
+  padding: 0;            /* On enlève le padding interne */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Bouton Retour (ex: ← BACK TO ROSTER) */
 .gato-back {
@@ -299,6 +314,10 @@ a { text-decoration: none; color: inherit; }
 .split-title { font-size: clamp(40px, 8vw, 90px); line-height: 0.9; margin: 0 0 10px 0; }
 .split-subtitle { font-size: 1.1rem; font-weight: 900; color: var(--gato-red); letter-spacing: 2px; margin-bottom:30px;}
 .split-desc { font-size: 1rem; line-height: 1.6; font-weight: bold; color: #444; border-left: 4px solid var(--gato-black); padding-left: 10px; text-transform: none; margin-bottom: 15px; margin-top:0; }
+.split-desc strong {
+  color: var(--gato-red); /* Met les mots importants en rouge, très stylé */
+  font-weight: 900;
+}
 
 /* =========================================
    6. GRILLES & CARTES (Discographie & Artistes)
@@ -664,3 +683,67 @@ a { text-decoration: none; color: inherit; }
 .grid-discographie .release-card:nth-child(3), .artist-grid .release-card:nth-child(3) { animation-delay: 0.28s; }
 .grid-discographie .release-card:nth-child(4), .artist-grid .release-card:nth-child(4) { animation-delay: 0.38s; }
 .grid-discographie .release-card:nth-child(n+5), .artist-grid .release-card:nth-child(n+5) { animation-delay: 0.48s; }
+
+/* =========================================
+   10. RESPONSIVE MOBILE (SMARTPHONES)
+   ========================================= */
+@media (max-width: 768px) {
+  
+  /* --- FIXES PRÉCÉDENTS (Menu, Header, Artistes, etc.) --- */
+  .pack-header { padding: 30px 20px 50px 20px; }
+  .brand-title { font-size: 60px; }
+  .nav-links { gap: 12px; justify-content: center; }
+  .nav-links a { font-size: 0.85rem; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 30px; }
+  .filters { font-size: 0.85rem; }
+  .split-visual.artist-visual { max-width: 260px; margin: 0 auto; }
+  .split-visual-wrapper { display: flex; justify-content: center; width: 100%; }
+  .split-visual.artist-visual .gato-sticker { bottom: -10px; }
+  .split-layout { gap: 25px; margin-bottom: 50px; }
+  .grid-discographie { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+  .artist-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; }
+  .split-title { font-size: 3rem; margin-bottom: 5px; }
+  .split-subtitle { margin-bottom: 20px; }
+
+  /* --- NOUVEAUX FIXES (Suite à tes screenshots) --- */
+  
+  /* 1. ON DÉGAGE LA TEXTURE PAPIER SUR MOBILE */
+  body::before { 
+    display: none !important; 
+  }
+
+  /* 2. LE WARNING LABEL DEVIENT LISIBLE */
+  .warning-label { 
+    font-size: 1.1rem; /* Beaucoup plus petit */
+    padding: 15px; 
+    margin-bottom: 30px; 
+  }
+
+  /* 3. LE BLOC NEW RELEASE (HERO) DEVIENT UN RECTANGLE */
+  .hero { 
+    min-height: auto; /* Casse l'effet "carré géant" */
+    padding: 60px 15px; /* Équilibre le haut et le bas */
+    margin-bottom: 40px; 
+  }
+  .hero-title { 
+    font-size: 2.5rem; /* Réduit la taille du titre "LOSER" */
+  }
+
+  /* 4. LES STATS "WHAT IS GATO?" SONT PARFAITEMENT ALIGNÉES */
+  .stats-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Force 2 colonnes strictes */
+    gap: 30px;
+    padding: 0;
+  }
+  
+  /* Le 3ème élément (22K+) prend toute la largeur en dessous pour être centré */
+  .stat-item:nth-child(3) {
+    grid-column: span 2;
+    margin-top: -10px;
+  }
+  
+  .stat-number { 
+    font-size: 3rem; /* Légèrement plus contenu */
+  }
+}
