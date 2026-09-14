@@ -1,4 +1,6 @@
 {
+  "___SECTION_1___": "=================== CONFIGURATION DU SITE ===================",
+  
   "packaging_info": {
     "capabilities": [
       {
@@ -19,6 +21,9 @@
       }
     ]
   },
+
+  "___SECTION_2___": "=================== BANNIERE ACCUEIL (HERO) ===================",
+
   "hero": {
     "tag": "&#x25B6;&#xFE0E; NEW RELEASE",
     "title": "LOSER",
@@ -34,6 +39,9 @@
       }
     ]
   },
+
+  "___SECTION_3___": "=================== ROSTER (ARTISTES) ===================",
+
   "artists": [
     {
       "id": "lyndxn",
@@ -60,7 +68,6 @@
         "youtube": "https://www.youtube.com/@w0ndr_off",
         "instagram": "https://instagram.com/w0ndr_",
         "tiktok": "https://www.tiktok.com/@w0ndr_"
-        
       }
     },
     {
@@ -118,28 +125,25 @@
       }
     }
   ],
+
+  "___SECTION_4___": "=================== DISCOGRAPHIE (RELEASES) ===================",
+
   "releases": [
     {
       "id": "yzote-meraki",
       "title": "meraki",
       "artist_id": "yzote",
-      "release_date": "2025-11-16",
       "format": "Single",
+      "release_date": "2025-11-16",
       "cover": "https://i1.sndcdn.com/artworks-hAgxzMG13CrkRHWX-koMXKA-t1080x1080.png",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. meraki"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "composer/producer": "yzote",
@@ -152,23 +156,17 @@
       "id": "w0ndr-leaving_earth",
       "title": "Leaving Earth",
       "artist_id": "w0ndr",
-      "release_date": "2026-02-27",
       "format": "Single",
+      "release_date": "2026-02-27",
       "cover": "https://images.genius.com/664246eced02aef578763e89fe8fbd89.1000x1000x1.png",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Leaving Earth"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -182,23 +180,17 @@
       "id": "tengshe-pas_si_rose",
       "title": "pas si rose",
       "artist_id": "tengshe",
-      "release_date": "2026-03-06",
       "format": "Single",
+      "release_date": "2026-03-06",
       "cover": "https://i.scdn.co/image/ab67616d0000b2733707ed435233d24e3f2640e5",
       "desc": "",
+      "copyright": "℗ & © 2026 Alvéole Records",
       "tracklist": [
         "1. pas si rose"
       ],
-      "copyright": "℗ & © 2026 Alvéole Records",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "tengshe",
@@ -213,24 +205,18 @@
       "id": "w0ndr-not_for_me",
       "title": "Not For Me",
       "artist_id": "w0ndr",
-      "release_date": "2026-05-12",
       "format": "Single Pack",
+      "release_date": "2026-05-12",
       "cover": "https://i1.sndcdn.com/artworks-eG9zk5WnePAzESI7-SEIF8g-t500x500.png",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Not For Me",
         "2. Not For Me - Sped"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -244,24 +230,18 @@
       "id": "ivrs-maybe",
       "title": "Maybe?",
       "artist_id": "ivrs",
-      "release_date": "2026-05-20",
       "format": "Single Pack",
+      "release_date": "2026-05-20",
       "cover": "https://i.scdn.co/image/ab67616d0000b273036ca6fbf8e2ce9697f98f1e",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Maybe?",
         "2. Maybe? - Alternate Edit"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "Ivrs., tengshe, lyndxn",
@@ -275,23 +255,17 @@
       "id": "alma-scars_of_you",
       "title": "Scars Of You",
       "artist_id": "alma_nava",
-      "release_date": "2026-05-08",
       "format": "Single",
+      "release_date": "2026-05-08",
       "cover": "https://external-preview.redd.it/scars-of-you-alma-nava-v0-a-2JMxck-mXwYOpRItPv9HhnwLDF2ImBktZCigwIfs8.jpeg?width=640&crop=smart&auto=webp&s=a4b53f42d9c3d9e424d0f5f284282d697e85f99c",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Scars Of You"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "Alma Nava",
@@ -305,26 +279,20 @@
       "id": "tengshe-pas_si_rose-ep",
       "title": "pas si rose - EP",
       "artist_id": "tengshe",
-      "release_date": "2026-05-20",
       "format": "EP",
+      "release_date": "2026-05-20",
       "cover": "https://i.scdn.co/image/ab67616d0000b2733707ed435233d24e3f2640e5",
       "desc": "Tengshe's first EP finally hits streaming in a fresh re-release.",
+      "copyright": "℗ & © 2026 Alvéole Records",
       "tracklist": [
         "1. les abysses",
         "2. pas si rose",
         "3. u + me",
         "4. dis-le moi"
       ],
-      "copyright": "℗ & © 2026 Alvéole Records",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "tengshe",
@@ -339,23 +307,17 @@
       "id": "w0ndr-fun",
       "title": "Fun",
       "artist_id": "w0ndr",
-      "release_date": "2026-05-22",
       "format": "Single",
+      "release_date": "2026-05-22",
       "cover": "https://i.scdn.co/image/ab67616d0000b273988ff169d983bd289c1d9c22",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Fun"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -369,23 +331,17 @@
       "id": "ivrs-again",
       "title": "Again",
       "artist_id": "ivrs",
-      "release_date": "2026-06-03",
       "format": "Single",
+      "release_date": "2026-06-03",
       "cover": "https://i.scdn.co/image/ab67616d0000b27315b80daa9db778cdd5beb75c",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Again"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "Ivrs., Alma Nava, tengshe, lyndxn",
@@ -393,32 +349,26 @@
         "producer": "everestdidthis",
         "mix": "lyndxn",
         "mastering": "tengshe",
-        "art": "sonicbaw"
+        "art": "sonikebaww"
       }
     },
     {
       "id": "w0ndr-3songs",
       "title": "3 Songs",
       "artist_id": "w0ndr",
-      "release_date": "2026-07-03",
       "format": "Single Pack",
+      "release_date": "2026-07-03",
       "cover": "https://i.audiomack.com/w0ndr/399a471592.webp",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Paranoia",
         "2. Warm",
         "3. TLIW"  
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -433,23 +383,17 @@
       "id": "tengshe-heartfrozen",
       "title": "HEARTFROZEN",
       "artist_id": "tengshe",
-      "release_date": "2026-07-24",
       "format": "Single",
+      "release_date": "2026-07-24",
       "cover": "https://i.audiomack.com/tengshe/6eb0378708.webp?width=1440",
       "desc": "",
+      "copyright": "℗ & © 2026 Alvéole Records",
       "tracklist": [
         "1. HEARTFROZEN 心冰了"
       ],
-      "copyright": "℗ & © 2026 Alvéole Records",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "tengshe",
@@ -470,23 +414,17 @@
       "id": "w0ndr-nothing_left",
       "title": "Nothing Left",
       "artist_id": "w0ndr",
-      "release_date": "2026-08-21",
       "format": "Single",
+      "release_date": "2026-08-21",
       "cover": "https://i.scdn.co/image/ab67616d0000b27357492e20873796a5a23ef44b",
       "desc": "",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Nothing Left"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -500,23 +438,17 @@
       "id": "w0ndr-loser",
       "title": "Loser",
       "artist_id": "w0ndr",
-      "release_date": "2026-10-11",
       "format": "Single",
+      "release_date": "2026-10-11",
       "cover": "/assets/losercoverv1.png",
       "desc": "First single from w0ndr's upcoming EP: Loser's Diary",
+      "copyright": "℗ & © 2026 GATO",
       "tracklist": [
         "1. Loser"
       ],
-      "copyright": "℗ & © 2026 GATO",
       "links": [
-        {
-          "text": "LISTEN ON SPOTIFY",
-          "url": "https://spotify.com"
-        },
-        {
-          "text": "LISTEN NOW",
-          "url": "https://apple.com"
-        }
+        { "text": "LISTEN ON SPOTIFY", "url": "https://spotify.com" },
+        { "text": "LISTEN NOW", "url": "https://apple.com" }
       ],
       "credits": {
         "songwriter": "w0ndr",
@@ -528,6 +460,8 @@
     }
   ],
   
+  "___SECTION_5___": "=================== PROJETS (CLIENTS & INTERNES) ===================",
+
   "projects": [
     {
       "id": "tengshe-heartfrozen-mv",
@@ -536,38 +470,26 @@
       "client": "tengshe - Alvéole Records",
       "type": "Music Video",
       "role": "Direction & Edit",
+      "date": "2026-07-24",
       "desc": "Music video production for Tengshe's single. Shot on iPhone, on location in Switzerland.",
       "thumbnail": "https://i.audiomack.com/tengshe/6eb0378708.webp?width=1440",
+      "copyright": "© 2026 GATO For Alvéole Records",
       "main_media": {
         "type": "youtube",
         "data": "8VN5QqErkII"
       },
-      "copyright": "© 2026 GATO For Alvéole Records",
-      "date": "2026-07-24",
       "credits": {
         "Director": "lyndxn",
         "Producer": "GATO",
         "Edit & Color": "lyndxn"
       },
       "bts_gallery": [
-        {
-          "image": "/assets/archives/tengshe-h-a1.png"
-        },
-        {
-          "image": "/assets/archives/tengshe-h-a2.png"
-        },
-        {
-          "image": "/assets/archives/tengshe-h-a3.png"
-        },
-        {
-          "image": "/assets/archives/tengshe-h-a4.png"
-        },
-        {
-          "image": "/assets/archives/tengshe-h-a5.png"
-        }
+        { "image": "/assets/archives/tengshe-h-a1.png" },
+        { "image": "/assets/archives/tengshe-h-a2.png" },
+        { "image": "/assets/archives/tengshe-h-a3.png" },
+        { "image": "/assets/archives/tengshe-h-a4.png" },
+        { "image": "/assets/archives/tengshe-h-a5.png" }
       ]
     }
   ]
 }
-
-  

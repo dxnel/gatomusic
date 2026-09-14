@@ -299,13 +299,13 @@ a { text-decoration: none; color: inherit; }
 .page-fade-leave-to { opacity: 0; transform: translateY(-8px); }
 
 @keyframes item-entrance { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-.release-card, .artist-column, .split-left, .split-visual-wrapper, .split-info > * { opacity: 0; animation: item-entrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.release-card, .project-card, .artist-column, .split-left, .split-visual-wrapper, .split-info > * { opacity: 0; animation: item-entrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-.grid-discographie .release-card:nth-child(1), .artist-grid .release-card:nth-child(1) { animation-delay: 0.08s; }
-.grid-discographie .release-card:nth-child(2), .artist-grid .release-card:nth-child(2) { animation-delay: 0.18s; }
-.grid-discographie .release-card:nth-child(3), .artist-grid .release-card:nth-child(3) { animation-delay: 0.28s; }
-.grid-discographie .release-card:nth-child(4), .artist-grid .release-card:nth-child(4) { animation-delay: 0.38s; }
-.grid-discographie .release-card:nth-child(n+5), .artist-grid .release-card:nth-child(n+5) { animation-delay: 0.48s; }
+.grid-discographie .release-card:nth-child(1), .artist-grid .release-card:nth-child(1), .projects-grid .project-card:nth-child(1) { animation-delay: 0.08s; }
+.grid-discographie .release-card:nth-child(2), .artist-grid .release-card:nth-child(2), .projects-grid .project-card:nth-child(2) { animation-delay: 0.18s; }
+.grid-discographie .release-card:nth-child(3), .artist-grid .release-card:nth-child(3), .projects-grid .project-card:nth-child(3) { animation-delay: 0.28s; }
+.grid-discographie .release-card:nth-child(4), .artist-grid .release-card:nth-child(4), .projects-grid .project-card:nth-child(4) { animation-delay: 0.38s; }
+.grid-discographie .release-card:nth-child(n+5), .artist-grid .release-card:nth-child(n+5), .projects-grid .project-card:nth-child(n+5) { animation-delay: 0.48s; }
 
 /* --- 11. VISUALS & IFRAMES --- */
 .visuals-section { margin-top: 0px; }
