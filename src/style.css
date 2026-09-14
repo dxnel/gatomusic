@@ -772,4 +772,9 @@ a { text-decoration: none; color: inherit; }
   .roster-split {
     gap: 10px; /* Réduit l'espace entre les colonnes */
   }
+
+  html, body {
+      background-color: var(--gato-red) !important;
+      overscroll-behavior-y: none;
+  }
 }
