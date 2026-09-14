@@ -45,7 +45,7 @@ const closeModal = () => {
     <!-- LE CONTENU D'ABORD -->
     <div class="project-details-grid">
       <div class="project-desc-col">
-        <h3 class="section-mini-title">PROJECT OVERVIEW</h3>
+        <h3 class="section-mini-title">OVERVIEW</h3>
        <p class="split-desc" v-html="project.desc || 'No description provided.'"></p>
         <div class="copyright-text" v-if="project.copyright" style="margin-top: 20px;">
           {{ project.copyright }}
@@ -185,7 +185,7 @@ const closeModal = () => {
    ========================================= */
 .project-header { margin-bottom: 40px; }
 .project-main-title { font-size: clamp(40px, 8vw, 90px); line-height: 0.9; margin: 15px 0 10px 0; }
-.project-details-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
+.project-details-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
 @media (min-width: 800px) { .project-details-grid { grid-template-columns: 2fr 1fr; gap: 80px; } }
 .credits-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
 .credit-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 4px; }
