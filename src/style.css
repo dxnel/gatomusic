@@ -768,4 +768,8 @@ a { text-decoration: none; color: inherit; }
   .vue-main-layout {
     padding-top: 15px; /* Au lieu de 40px sur PC */
   }
+
+  .roster-split {
+    gap: 10px; /* Réduit l'espace entre les colonnes */
+  }
 }

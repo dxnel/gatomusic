@@ -235,8 +235,20 @@ const closeModal = () => {
 }
 
 .visuals-section { margin-top: 30px; }
-.bts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
-@media (min-width: 900px) { .bts-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; } }
+/* NOUVEAU CODE : */
+.bts-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); /* Force 2 colonnes strictes sur mobile ! */
+  gap: 15px; /* Espace réduit pour mobile */
+}
+
+@media (min-width: 768px) { 
+  .bts-grid { 
+    /* Sur PC et tablette, on fait des colonnes plus petites (180px) pour éviter l'effet géant */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 30px; 
+  } 
+}
 .bts-item { display: flex; flex-direction: column; }
 .bts-visual { width: 100%; aspect-ratio: 4/3; border: 3px solid var(--gato-black); background-color: var(--gato-black); box-shadow: 6px 6px 0px rgba(0,0,0,0.08); overflow: hidden; margin-bottom: 12px; }
 .bts-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
