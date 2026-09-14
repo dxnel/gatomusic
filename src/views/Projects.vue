@@ -19,7 +19,7 @@ const getImageUrl = (imagePath) => {
 <template>
   <div class="section">
     <div class="section-header">
-      <h1 style="margin: 0;">PROJECTS & CAMPAIGNS</h1>
+      <h1 style="margin: 0;">PROJECTS</h1>
     </div>
 
     <div v-if="projects.length === 0" class="warning-label" style="margin-top: 40px;">

@@ -6,6 +6,7 @@ import Artists from './views/Artists.vue'
 import Artist from './views/Artist.vue' 
 import Projects from './views/Projects.vue'
 import Project from './views/Project.vue'
+import About from './views/About.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -14,7 +15,8 @@ const routes = [
   { path: '/artists', name: 'Artists', component: Artists },
   { path: '/artist/:id', name: 'Artist', component: Artist },
   { path: '/projects', name: 'Projects', component: Projects },
-  { path: '/project/:id', name: 'Project', component: Project }
+  { path: '/project/:id', name: 'Project', component: Project },
+  { path: '/about', name: 'About', component: About }
 ]
 
 export const router = createRouter({

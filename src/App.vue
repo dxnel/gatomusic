@@ -25,7 +25,8 @@
             to="/discography" 
             :class="{ 'router-link-active': $route.name === 'Release' }"
           >
-            DISCOGRAPHY
+            <span class="desktop-text">DISCOGRAPHY</span>
+            <span class="mobile-text">DISCO</span>
           </router-link>
         </li>
         
@@ -35,6 +36,16 @@
             :class="{ 'router-link-active': $route.name === 'Project' }"
           >
             PROJECTS
+          </router-link>
+          
+        </li>
+        <!-- ICI : On ajoute la balise <li> manquante autour de ABOUT -->
+        <li>
+          <router-link 
+            to="/about" 
+            :class="{ 'router-link-active': $route.name === 'About' }"
+          >
+            ABOUT
           </router-link>
         </li>
       </ul>

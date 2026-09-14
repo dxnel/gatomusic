@@ -46,6 +46,22 @@ a { text-decoration: none; color: inherit; }
 }
 .text-ui { font-family: var(--font-ui); font-weight: 900; }
 
+.mobile-text {
+  display: none;
+}
+.desktop-text {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: inline;
+  }
+}
+
 /* =========================================
    2. UI COMPONENTS (Boutons, Stickers)
    ========================================= */
@@ -210,7 +226,7 @@ a { text-decoration: none; color: inherit; }
 .contact-info a { color: var(--gato-red); transition: color 0.2s;}
 .contact-info a:hover { color: var(--gato-black); }
 .barcode-massive {
-  width: 100%; height: 80px; margin-top: 20px;
+  width: 100%; height: 80px; margin-top: 20px; margin-bottom: 20px;
   background: repeating-linear-gradient(90deg, #111, #111 4px, transparent 4px, transparent 8px, #111 8px, #111 10px, transparent 10px, transparent 16px);
 }
 
@@ -278,7 +294,7 @@ a { text-decoration: none; color: inherit; }
 .gato-manifesto { margin-bottom: 80px; }
 .manifesto-grid {
   display: grid; grid-template-columns: 1fr;
-  padding: 20px 0; gap: 40px;
+  padding: 0 0; gap: 40px;
   /* J'ai supprimé les bordures haut et bas ici pour éviter les doublons avec les sections */
 }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 4px solid var(--gato-black); }
@@ -619,7 +635,7 @@ a { text-decoration: none; color: inherit; }
    VISUALS & YOUTUBE PLAYERS
    ========================================= */
 .visuals-section { 
-  margin-top: 60px; 
+  margin-top: 0px; 
 }
 
 .videos-grid { 

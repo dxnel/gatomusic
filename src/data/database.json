@@ -7,15 +7,15 @@
       },
       {
         "service": "DISTRIBUTION",
-        "desc": "Independent catalog integration into high-velocity global streaming ecosystems."
+        "desc": "Handling digital distribution with acessible, low-cost tools for both internal and external select clients."
       },
       {
         "service": "AUDIO ENGINEERING",
-        "desc": "Advanced mixing, stem mastering, and acoustic structural design."
+        "desc": "Powerful mixing, mastering, and sound design services."
       },
       {
         "service": "CREATIVE DIRECTION",
-        "desc": "Visual world-building, typography systems, and merchandise curation."
+        "desc": "Raw visuals, art direction curated in-house."
       }
     ]
   },
@@ -40,11 +40,11 @@
       "name": "lyndxn",
       "type": "GATO Exclusive",
       "role": "Founder & Head Of GATO",
-      "desc": "Bla bla.",
-      "image": "/GATO_LogoPPRed-1000.png",
+      "desc": "",
+      "image": "src/assets/lyndxn-pp.png",
       "socials": {
-        "instagram": "https://instagram.com/",
-        "soundcloud": "https://soundcloud.com/"
+        "instagram": "https://instagram.com/lyndxnmusic",
+        "soundcloud": "https://soundcloud.com/lyndxnmusic"
       }
     },
     {
@@ -52,13 +52,13 @@
       "name": "w0ndr",
       "type": "GATO Exclusive",
       "role": "Artist",
-      "desc": "w0ndr is an independent artist pushing the boundaries of alternative pop.<br><br><strong>LATEST ERA:</strong><br>His new sonic direction involves heavy distortion mixed with ethereal vocals. Do not sleep on this.",
-      "image": "/assets/losercoverv1.png",
+      "desc": "w0ndr is...<br><br><strong>PLACEHOLDER:</strong><br>His single Leaving Earth has over 10k streams across streaming platforms.",
+      "image": "src/assets/w0ndr-pp.png",
       "socials": {
-        "spotify": "https://spotify.com/",
-        "youtube": "https://youtube.com/",
-        "instagram": "https://instagram.com/",
-        "tiktok": "https://tiktok.com/"
+        "spotify": "https://open.spotify.com/artist/4vbdhbEw5bEJScPwjewhzM",
+        "youtube": "https://www.youtube.com/@w0ndr_off",
+        "instagram": "https://instagram.com/w0ndr_",
+        "tiktok": "https://www.tiktok.com/@w0ndr_"
         
       }
     },
@@ -67,10 +67,12 @@
       "name": "Alma Nava",
       "type": "GATO Exclusive",
       "role": "Artist",
-      "desc": "Bla bla.",
-      "image": "/GATO_LogoPPRed-1000.png",
+      "desc": "",
+      "image": "src/assets/GATO_LogoBlack-1000.png",
       "socials": {
-        "instagram": "https://instagram.com/"
+        "spotify": "https://open.spotify.com/artist/5Xz086JO4UYdGA86bJS7tY",
+        "instagram": "https://www.instagram.com/alma_navaa/",
+        "tiktok": "https://www.tiktok.com/@alma.navaa"
       }
     },
     {
@@ -78,11 +80,14 @@
       "name": "tengshe",
       "type": "Distribution",
       "role": "Artist ● Alvéole Records",
-      "desc": "Bla bla,",
+      "desc": "",
       "image": "src/assets/tengshe-pp.jpg",
       "socials": {
-        "instagram": "https://instagram.com/",
-        "spotify": "https://spotify.com/"
+        "spotify": "https://open.spotify.com/artist/2Vpb0qaSmyhIwydvg0UXC8",
+        "youtube": "https://www.youtube.com/@t.engshe",
+        "instagram": "https://instagram.com/t.engshe",
+        "tiktok": "https://www.tiktok.com/@t.engshe",
+        "soundcloud": "https://soundcloud.com/tengshe90434197"
       }
     },
     {
@@ -90,10 +95,12 @@
       "name": "Ivrs.",
       "type": "GATO Exclusive",
       "role": "Artist",
-      "desc": "Bla bla..",
-      "image": "/imgs/artists/ivrspp.png",
+      "desc": "",
+      "image": "src/assets/ivrs-pp.png",
       "socials": {
-        "instagram": "https://instagram.com/"
+        "spotify": "https://open.spotify.com/artist/52XT4u965Oa2RFcNENUCsn",
+        "youtube": "https://www.youtube.com/@ivrs_off",
+        "instagram": "https://www.instagram.com/ivrs_/"
       }
     },
     {
@@ -101,10 +108,12 @@
       "name": "yzote",
       "type": "GATO Exclusive",
       "role": "Artist",
-      "desc": "Bla bla.",
-      "image": "/GATO_LogoPPRed-1000.png",
+      "desc": "",
+      "image": "src/assets/yzote-pp.png",
       "socials": {
-        "instagram": "https://instagram.com/"
+        "spotify": "https://open.spotify.com/artist/2CAqBiuzVssiUvvMCQZh0Z",
+        "youtube": "https://www.youtube.com/@yzote",
+        "soundcloud": "https://soundcloud.com/yzote"
       }
     }
   ],

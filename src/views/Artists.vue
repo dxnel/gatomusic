@@ -37,7 +37,7 @@ const distroRoster = computed(() => allArtists.value.filter(a => a.type.toLowerC
 
       <!-- COLONNE 2 : DISTRIBUTION -->
       <div class="roster-column">
-        <h2 class="roster-category-title">DISTRIBUTION</h2>
+        <h2 class="roster-category-title">PARTNERS</h2>
         <div class="artist-grid">
           <router-link v-for="artist in distroRoster" :key="artist.id" :to="'/artist/' + artist.id" class="release-card">
             <div class="artist-cover">

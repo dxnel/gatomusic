@@ -183,7 +183,7 @@ const closeModal = () => {
 /* =========================================
    LE RESTE DU CSS CLASSIQUE DE PROJECT.VUE
    ========================================= */
-.project-header { margin-bottom: 40px; }
+.project-header { margin-bottom: 0px; }
 .project-main-title { font-size: clamp(40px, 8vw, 90px); line-height: 0.9; margin: 15px 0 10px 0; }
 .project-details-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
 @media (min-width: 800px) { .project-details-grid { grid-template-columns: 2fr 1fr; gap: 80px; } }

@@ -76,7 +76,7 @@ const getPlatformColor = (platform) => {
         <h2 class="split-subtitle">{{ artist.role }}</h2>
         <p class="split-desc" v-html="artist.desc || 'NO DESCRIPTION AVAILABLE YET.'"></p>
 
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;" v-if="artist.socials">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top:10px" v-if="artist.socials">
   <a 
     v-for="(link, platform) in artist.socials" 
     :key="platform" 
