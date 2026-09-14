@@ -1,0 +1,560 @@
+{
+  "packaging_info": {
+    "capabilities": [
+      {
+        "service": "RECORD LABEL & MANAGEMENT",
+        "desc": "Full-lifecycle career development, strategic planning, and release architecture."
+      },
+      {
+        "service": "DISTRIBUTION",
+        "desc": "Independent catalog integration into high-velocity global streaming ecosystems."
+      },
+      {
+        "service": "AUDIO ENGINEERING",
+        "desc": "Advanced mixing, stem mastering, and acoustic structural design."
+      },
+      {
+        "service": "CREATIVE DIRECTION",
+        "desc": "Visual world-building, typography systems, and merchandise curation."
+      }
+    ]
+  },
+  "hero": {
+    "tag": "▶ NEW RELEASE",
+    "title": "LOSER",
+    "description": "First single from w0ndr's upcoming EP: Loser's Diary",
+    "mediaType": "image",
+    "mediaUrl": "./assets/losercoverv1.png",
+    "buttons": [
+      {
+        "text": "PRE-SAVE ON SPOTIFY",
+        "url": "/discography",
+        "bgColor": "#A81A1A",
+        "textColor": "#ffffff"
+      }
+    ]
+  },
+  "artists": [
+    {
+      "id": "lyndxn",
+      "name": "lyndxn",
+      "type": "GATO Exclusive",
+      "role": "Founder & Head Of GATO",
+      "desc": "Bla bla.",
+      "image": "/GATO_LogoPPRed-1000.png",
+      "socials": {
+        "instagram": "https://instagram.com/",
+        "soundcloud": "https://soundcloud.com/"
+      }
+    },
+    {
+      "id": "w0ndr",
+      "name": "w0ndr",
+      "type": "GATO Exclusive",
+      "role": "Artist",
+      "desc": "Indie-Pop etc.",
+      "image": "/assets/losercoverv1.png",
+      "socials": {
+        "instagram": "https://instagram.com/",
+        "spotify": "https://spotify.com/"
+      }
+    },
+    {
+      "id": "alma_nava",
+      "name": "Alma Nava",
+      "type": "GATO Exclusive",
+      "role": "Artist",
+      "desc": "Bla bla.",
+      "image": "/GATO_LogoPPRed-1000.png",
+      "socials": {
+        "instagram": "https://instagram.com/"
+      }
+    },
+    {
+      "id": "tengshe",
+      "name": "tengshe",
+      "type": "Distribution",
+      "role": "Artist ● Alvéole Records",
+      "desc": "Bla bla,",
+      "image": "src/assets/tengshe-pp.jpg",
+      "socials": {
+        "instagram": "https://instagram.com/",
+        "spotify": "https://spotify.com/"
+      }
+    },
+    {
+      "id": "ivrs",
+      "name": "Ivrs.",
+      "type": "GATO Exclusive",
+      "role": "Artist",
+      "desc": "Bla bla..",
+      "image": "/imgs/artists/ivrspp.png",
+      "socials": {
+        "instagram": "https://instagram.com/"
+      }
+    },
+    {
+      "id": "yzote",
+      "name": "yzote",
+      "type": "GATO Exclusive",
+      "role": "Artist",
+      "desc": "Bla bla.",
+      "image": "/GATO_LogoPPRed-1000.png",
+      "socials": {
+        "instagram": "https://instagram.com/"
+      }
+    }
+  ],
+  "releases": [
+    {
+      "id": "yzote-meraki",
+      "title": "meraki",
+      "artist_id": "yzote",
+      "release_date": "2025-11-16",
+      "format": "Single",
+      "cover": "https://i1.sndcdn.com/artworks-hAgxzMG13CrkRHWX-koMXKA-t1080x1080.png",
+      "desc": "",
+      "tracklist": [
+        "1. meraki"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "composer/producer": "yzote",
+        "mix": "lyndxn",
+        "mastering": "lyndxn",
+        "art": "yzote, lyndxn"
+      }
+    },
+    {
+      "id": "w0ndr-leaving_earth",
+      "title": "Leaving Earth",
+      "artist_id": "w0ndr",
+      "release_date": "2026-02-27",
+      "format": "Single",
+      "cover": "https://images.genius.com/664246eced02aef578763e89fe8fbd89.1000x1000x1.png",
+      "desc": "",
+      "tracklist": [
+        "1. Leaving Earth"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "producer": "Robin Cause",
+        "mix": "lyndxn, tengshe",
+        "mastering": "tengshe",
+        "art": "Noé Wisard"
+      }
+    },
+    {
+      "id": "tengshe-pas_si_rose",
+      "title": "pas si rose",
+      "artist_id": "tengshe",
+      "release_date": "2026-03-06",
+      "format": "Single",
+      "cover": "https://i.scdn.co/image/ab67616d0000b2733707ed435233d24e3f2640e5",
+      "desc": "",
+      "tracklist": [
+        "1. pas si rose"
+      ],
+      "copyright": "℗ & © 2026 Alvéole Records",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "tengshe",
+        "producer": "tengshe",
+        "mix": "tengshe",
+        "mastering": "tengshe",
+        "art": "tengshe, lyndxn",
+        "Distribution": "GATO"
+      }
+    },
+    {
+      "id": "w0ndr-not_for_me",
+      "title": "Not For Me",
+      "artist_id": "w0ndr",
+      "release_date": "2026-05-12",
+      "format": "Single Pack",
+      "cover": "https://i1.sndcdn.com/artworks-eG9zk5WnePAzESI7-SEIF8g-t500x500.png",
+      "desc": "",
+      "tracklist": [
+        "1. Not For Me",
+        "2. Not For Me - Sped"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "producer": "Robin Cause",
+        "mix": "lyndxn",
+        "mastering": "tengshe",
+        "art": "Noé Wisard"
+      }
+    },
+    {
+      "id": "ivrs-maybe",
+      "title": "Maybe?",
+      "artist_id": "ivrs",
+      "release_date": "2026-05-20",
+      "format": "Single Pack",
+      "cover": "https://i.scdn.co/image/ab67616d0000b273036ca6fbf8e2ce9697f98f1e",
+      "desc": "",
+      "tracklist": [
+        "1. Maybe?",
+        "2. Maybe? - Alternate Edit"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "Ivrs., tengshe, lyndxn",
+        "producer": "everestdidthis",
+        "mix": "lyndxn, tengshe",
+        "mastering": "tengshe",
+        "art": "lyndxn"
+      }
+    },
+    {
+      "id": "alma-scars_of_you",
+      "title": "Scars Of You",
+      "artist_id": "alma_nava",
+      "release_date": "2026-05-08",
+      "format": "Single",
+      "cover": "https://external-preview.redd.it/scars-of-you-alma-nava-v0-a-2JMxck-mXwYOpRItPv9HhnwLDF2ImBktZCigwIfs8.jpeg?width=640&crop=smart&auto=webp&s=a4b53f42d9c3d9e424d0f5f284282d697e85f99c",
+      "desc": "",
+      "tracklist": [
+        "1. Scars Of You"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "Alma Nava",
+        "composer/producer": "Alma Nava, lyndxn, Zin Raktain",
+        "mix": "lyndxn",
+        "mastering": "lyndxn",
+        "art": "lyndxn, Alma Nava"
+      }
+    },
+    {
+      "id": "tengshe-pas_si_rose-ep",
+      "title": "pas si rose - EP",
+      "artist_id": "tengshe",
+      "release_date": "2026-05-20",
+      "format": "EP",
+      "cover": "https://i.scdn.co/image/ab67616d0000b2733707ed435233d24e3f2640e5",
+      "desc": "Tengshe's first EP finally hits streaming in a fresh re-release.",
+      "tracklist": [
+        "1. les abysses",
+        "2. pas si rose",
+        "3. u + me",
+        "4. dis-le moi"
+      ],
+      "copyright": "℗ & © 2026 Alvéole Records",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "tengshe",
+        "producer": "tengshe, Perle, Zacharie",
+        "mix": "tengshe",
+        "mastering": "tengshe",
+        "art": "tengshe, lyndxn",
+        "Distribution": "GATO"
+      }
+    },
+    {
+      "id": "w0ndr-fun",
+      "title": "Fun",
+      "artist_id": "w0ndr",
+      "release_date": "2026-05-22",
+      "format": "Single",
+      "cover": "https://i.scdn.co/image/ab67616d0000b273988ff169d983bd289c1d9c22",
+      "desc": "",
+      "tracklist": [
+        "1. Fun"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "producer": "michael harrison",
+        "mix": "w0ndr, lyndxn",
+        "mastering": "tengshe",
+        "art": "Noé Wisard"
+      }
+    },
+    {
+      "id": "ivrs-again",
+      "title": "Again",
+      "artist_id": "ivrs",
+      "release_date": "2026-06-03",
+      "format": "Single",
+      "cover": "https://i.scdn.co/image/ab67616d0000b27315b80daa9db778cdd5beb75c",
+      "desc": "",
+      "tracklist": [
+        "1. Again"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "Ivrs., Alma Nava, tengshe, lyndxn",
+        "additional vocals": "Alma Nava",
+        "producer": "everestdidthis",
+        "mix": "lyndxn",
+        "mastering": "tengshe",
+        "art": "sonicbaw"
+      }
+    },
+    {
+      "id": "w0ndr-3songs",
+      "title": "3 Songs",
+      "artist_id": "w0ndr",
+      "release_date": "2026-07-03",
+      "format": "Single Pack",
+      "cover": "https://i.audiomack.com/w0ndr/399a471592.webp",
+      "desc": "",
+      "tracklist": [
+        "1. Paranoia",
+        "2. Warm",
+        "3. TLIW"  
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "composer/producer": "AMARAH, Robin Cause",
+        "mix": "lyndxn",
+        "mastering": "tengshe",
+        "art": "lyndxn",
+        "executive producer": "lyndxn"
+      }
+    },
+    {
+      "id": "tengshe-heartfrozen",
+      "title": "HEARTFROZEN",
+      "artist_id": "tengshe",
+      "release_date": "2026-07-24",
+      "format": "Single",
+      "cover": "https://i.audiomack.com/tengshe/6eb0378708.webp?width=1440",
+      "desc": "",
+      "tracklist": [
+        "1. HEARTFROZEN 心冰了"
+      ],
+      "copyright": "℗ & © 2026 Alvéole Records",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "tengshe",
+        "producer": "Kenzi",
+        "mix": "tengshe",
+        "mastering": "tengshe",
+        "art": "lyndxn",
+        "Distribution": "GATO"
+      },
+      "videos": [
+        {
+          "title": "tengshe - HEARTFROZEN 心冰了",
+          "youtube_id": "8VN5QqErkII" 
+        }
+      ]
+    },
+    {
+      "id": "w0ndr-nothing_left",
+      "title": "Nothing Left",
+      "artist_id": "w0ndr",
+      "release_date": "2026-08-21",
+      "format": "Single",
+      "cover": "https://i.scdn.co/image/ab67616d0000b27357492e20873796a5a23ef44b",
+      "desc": "",
+      "tracklist": [
+        "1. Nothing Left"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "producer": "noturmood",
+        "mix": "lyndxn",
+        "mastering": "lyndxn",
+        "art": "lyndxn"
+      }
+    },
+    {
+      "id": "w0ndr-loser",
+      "title": "Loser",
+      "artist_id": "w0ndr",
+      "release_date": "2026-10-11",
+      "format": "Single",
+      "cover": "/assets/losercoverv1.png",
+      "desc": "First single from w0ndr's upcoming EP: Loser's Diary",
+      "tracklist": [
+        "1. Loser"
+      ],
+      "copyright": "℗ & © 2026 GATO",
+      "links": [
+        {
+          "text": "LISTEN ON SPOTIFY",
+          "url": "https://spotify.com"
+        },
+        {
+          "text": "LISTEN NOW",
+          "url": "https://apple.com"
+        }
+      ],
+      "credits": {
+        "songwriter": "w0ndr",
+        "producer": "noturmood",
+        "mix": "lyndxn",
+        "mastering": "lyndxn",
+        "art": "lyndxn, Noé Wisard"
+      }
+    }
+  ],
+  
+  "projects": [
+    {
+      "id": "tengshe-heartfrozen-mv",
+      "title": "HEARTFROZEN (MV)",
+      "artist_id": "lyndxn",
+      "client": "tengshe - Alvéole Records",
+      "type": "Music Video",
+      "role": "Direction & Edit",
+      "desc": "Music video production for Tengshe's single. Shot on iPhone, on location in Switzerland.",
+      "thumbnail": "https://i.audiomack.com/tengshe/6eb0378708.webp?width=1440",
+      "main_media": {
+        "type": "youtube",
+        "data": "8VN5QqErkII"
+      },
+      "copyright": "© 2026 GATO For Alvéole Records",
+      "date": "2026-07-24",
+      "credits": {
+        "Director": "lyndxn",
+        "Producer": "GATO",
+        "Edit & Color": "lyndxn"
+      },
+      "bts_gallery": [
+        {
+          "image": "/assets/archives/tengshe-h-a1.png"
+        },
+        {
+          "image": "/assets/archives/tengshe-h-a2.png"
+        },
+        {
+          "image": "/assets/archives/tengshe-h-a3.png"
+        },
+        {
+          "image": "/assets/archives/tengshe-h-a4.png"
+        },
+        {
+          "image": "/assets/archives/tengshe-h-a5.png"
+        }
+      ]
+    }
+  ]
+}
+
+  

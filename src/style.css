@@ -1,0 +1,666 @@
+/* =========================================
+   1. TOKENS, RESET & iOS FIXES (GATO GRAMMAR)
+   ========================================= */
+:root {
+  --gato-red: #A81A1A;
+  --gato-cream: #f2efe9;
+  --gato-black: #111111;
+  --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+  margin: 0; padding: 0; 
+  background-color: var(--gato-red); /* Fix iOS Safari toolbar haut */
+  -webkit-text-size-adjust: 100%; 
+}
+
+body {
+  background-color: var(--gato-cream);
+  color: var(--gato-black);
+  font-family: var(--font-ui);
+  margin: 0; padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh; 
+  padding-bottom: env(safe-area-inset-bottom);
+  position: relative;
+  text-transform: uppercase;
+  overflow-x: hidden;
+}
+
+/* TEXTURE PAPIER GATO GLOBALE */
+body::before {
+  content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.25; pointer-events: none; z-index: 9999;
+  background: repeat url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2rV7928GBgYgBsgACEAAEGAAQJgDa8R6HxwAAAAASUVORK5CYII=');
+  background-size: 2px 2px;
+}
+
+a { text-decoration: none; color: inherit; }
+* { box-sizing: border-box; font-variant-emoji: text; }
+
+/* TYPOGRAPHIE GLOBALE */
+.title-serif, .instrument-serif { 
+  font-family: "Instrument Serif", serif; 
+  text-transform: none; 
+  font-weight: normal; 
+}
+.text-ui { font-family: var(--font-ui); font-weight: 900; }
+
+/* =========================================
+   2. UI COMPONENTS (Boutons, Stickers)
+   ========================================= */
+/* Bouton d'action standard */
+.gato-btn {
+  background-color: var(--gato-red); color: #fff;
+  border: 3px solid var(--gato-black); padding: 12px 24px;
+  font-weight: 900; font-size: 14px; letter-spacing: 1px; cursor: pointer;
+  box-shadow: 4px 4px 0px var(--gato-black); transition: all 0.15s ease;
+  display: inline-flex; justify-content: center; align-items: center;
+}
+.gato-btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--gato-black); }
+.gato-btn:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px var(--gato-black); opacity: 0.9; }
+
+/* Bouton spécial vert pour la première action (ex: Bandcamp / Streaming principal) */
+.gato-btn.green-btn {
+  background-color: #2e8b57; /* Ou un vert "brutaliste" de ton choix (ex: #1db954, #4CAF50...) */
+  color: #fff;
+  gap: 10px;
+}
+
+
+/* Bouton Retour (ex: ← BACK TO ROSTER) */
+.gato-back {
+  font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 30px; border-bottom: 2px solid transparent;
+  transition: all 0.2s; color: var(--gato-black);
+}
+.gato-back:hover { border-bottom: 2px solid var(--gato-red); color: var(--gato-red); }
+
+/* Étiquette (Sticker) */
+.gato-sticker {
+  background: var(--gato-red); color: #fff;
+  font-size: 10px; font-weight: 900; letter-spacing: 1px;
+  padding: 6px 12px; border: 2px solid var(--gato-black);
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.15); display: inline-block;
+}
+.gato-sticker.black { background: var(--gato-black); }
+
+/* Headers des sections (Discography, Releases, etc.) */
+.section-header {
+  border-bottom: 4px solid var(--gato-black); 
+  margin-bottom: 40px; padding-bottom: 10px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.section-header h1, .section-header h2 { font-size: clamp(24px, 4vw, 36px); margin: 0; font-weight: 900; }
+.filters span { font-weight: 900; color: #888; cursor: pointer; transition: color 0.2s; }
+.filters span.active, .filters span:hover { color: var(--gato-red); }
+.filter-sep {
+  font-weight: 500;       /* Rend le trait bien noir et lourd */
+  color: #111 !important  ;          /* Couleur bien tranchée (ou un gris foncé selon tes envies) */
+  margin: 0 6px;          /* Espace autour de la barre */
+  display: inline-block;
+  transform: scaleX(1.3); /* Étire légèrement le trait horizontalement pour l'épaissir visuellement */
+}
+
+/* =========================================
+   3. STRUCTURE PACKAGING (Header, Warning, Footer)
+   ========================================= */
+.pack-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.vue-main-layout { max-width: 1400px; margin: 0 auto; padding: 40px 5vw 80px 5vw; flex: 1; width: 100%;}
+.footer-seal { 
+  width: 80px; height: 80px; border-radius: 50%; 
+  margin: 0 auto 20px auto; display: block; /* Ça le centre parfaitement ! */
+}
+
+/* Le Chevron Rouge */
+.pack-header {
+  background-color: var(--gato-red); color: var(--gato-cream);
+  text-align: center; padding: 40px 20px 80px 20px;
+  position: relative; z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+}
+.brand-title { font-size: clamp(80px, 14vw, 180px); line-height: 0.8; margin: 0 0 10px 0; font-weight: normal; letter-spacing: 0.2em; }
+.brand-subtitle { font-weight: bold; letter-spacing: 4px; font-size: 14px; margin-top: 20px; }
+
+/* Menu de navigation propre (sans doublon de barre au survol) */
+.navbar { 
+  display: flex; 
+  justify-content: center; 
+  padding: 30px 20px; 
+}
+
+.nav-links { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 25px; 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  position: relative; 
+}
+
+.nav-links a { 
+  font-weight: 900; 
+  letter-spacing: 1px; 
+  padding: 5px 2px 8px 2px; 
+  position: relative;
+  transition: color 0.2s ease; /* Seule la couleur change fluidement au survol */
+}
+
+/* Au survol : SEUL le texte devient rouge (pas de barre) */
+.nav-links a:hover { 
+  color: var(--gato-red); 
+}
+
+/* La barre glissante (::after) s'applique UNIQUEMENT à l'élément actif */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--gato-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Quand le lien est actif : le texte est rouge ET la barre vient se positionner */
+.nav-links a.router-link-active {
+  color: var(--gato-red);
+}
+
+.nav-links a.router-link-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Warning Label (Home) */
+.warning-label {
+  margin: 10px auto 50px auto; max-width: 850px; width: 90%;
+  background: #fde744; border: 4px solid var(--gato-black); padding: 20px;
+  text-align: center; font-size: 1.5rem; font-weight: 900; line-height: 1.2;
+  position: relative; z-index: 3;
+}
+
+/* Footer & Code-Barres */
+.pack-footer {
+  background-color: #eae7dd; /* Une nuance légèrement plus foncée que le crème de base */
+  padding: 40px 5vw 20px 5vw;
+  width: 100%;
+}
+.contact-info { font-size: 12px; font-weight: bold; line-height: 1.6; text-align: center; }
+.contact-info a { color: var(--gato-red); transition: color 0.2s;}
+.contact-info a:hover { color: var(--gato-black); }
+.barcode-massive {
+  width: 100%; height: 80px; margin-top: 20px;
+  background: repeating-linear-gradient(90deg, #111, #111 4px, transparent 4px, transparent 8px, #111 8px, #111 10px, transparent 10px, transparent 16px);
+}
+
+/* =========================================
+   4. HOME PAGE (Hero & Manifesto)
+   ========================================= */
+.hero {
+  position: relative; text-align: center; margin-bottom: 60px;
+  border: 4px solid var(--gato-black); display: flex; flex-direction: column;
+  justify-content: center; align-items: center; min-height: 50vh; overflow: hidden;
+}
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.hero-bg img, .hero-bg video { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index:2;
+  background: linear-gradient(
+    135deg, 
+    rgba(214, 214, 214, 0.5) 0%, 
+    rgba(195, 195, 195, 0.3) 100%
+  );
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.hero-content { position: relative; z-index: 2; padding: 60px 20px; }
+.hero-tag { color: var(--gato-red); font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; font-size: 14px; }
+.hero-title { font-size: clamp(32px, 5vw, 64px); margin: 0 0 30px 0; line-height: 1.1; font-weight: 900; letter-spacing: -1px; text-transform: none; }
+
+/* Styles pour le Hero Customisable */
+.hero-desc {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1c1c1c;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  text-transform: none;
+  line-height: 1.5;
+
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Surcharge dynamique des boutons du Hero si besoin */
+.custom-hero-btn {
+  border: 3px solid var(--gato-black);
+  box-shadow: 4px 4px 0px var(--gato-black);
+}
+.custom-hero-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--gato-black);
+  opacity: 0.9;
+}
+
+/* Manifesto (Stats) */
+.gato-manifesto { margin-bottom: 80px; }
+.manifesto-grid {
+  display: grid; grid-template-columns: 1fr;
+  padding: 20px 0; gap: 40px;
+  /* J'ai supprimé les bordures haut et bas ici pour éviter les doublons avec les sections */
+}
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 4px solid var(--gato-black); }
+.cap-item { display: flex; flex-direction: column; }
+.cap-tag { border-bottom: 3px solid var(--gato-red); padding-bottom: 5px; font-weight: 900; margin-bottom: 10px; }
+.cap-desc { font-weight: bold; text-transform: none; color: #444; font-size: 0.95rem; line-height: 1.5; }
+@media (min-width: 900px) { .manifesto-grid { grid-template-columns: 1.5fr 1fr; } }
+.manifesto-text { display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 900px) { .manifesto-text { padding-right: 40px; border-right: 1px solid rgba(0, 0, 0, 0.15); } }
+.manifesto-text h2 { font-size: 2rem; margin: 0 0 15px 0; font-family: "Instrument Serif", serif; font-weight: normal; text-transform: none; }
+.manifesto-text p { font-size: 1rem; line-height: 1.6; color: #444; margin: 0; text-transform: none; font-weight: bold;}
+.stats-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 0 20px; }
+.stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.stat-number { font-size: 3.5rem; font-family: "Instrument Serif", serif; font-weight: normal; color: var(--gato-red); line-height: 1; text-transform: none;}
+.stat-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 2px; margin-top: 10px; color: var(--gato-black); }
+
+/* =========================================
+   5. LAYOUTS PAGES DÉTAILLÉES (Release / Artist)
+   ========================================= */
+.split-layout { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 80px; }
+@media (min-width: 800px) { .split-layout { grid-template-columns: 350px 1fr; gap: 60px; align-items: start; } }
+
+.split-visual {
+  position: relative; width: 100%; max-width: 400px; aspect-ratio: 1/1;
+  border: 4px solid var(--gato-black); box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+  background-color: #e8e3d8;
+  background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 8px);
+}
+.split-visual img { width: 100%; height: 100%; object-fit: cover; display:block}
+.split-visual .gato-sticker { position: absolute; top: -15px; right: -15px; z-index: 10; font-size: 12px; padding: 8px 16px; }
+
+.split-info { display: flex; flex-direction: column; }
+.split-title { font-size: clamp(40px, 8vw, 90px); line-height: 0.9; margin: 0 0 10px 0; }
+.split-subtitle { font-size: 1.1rem; font-weight: 900; color: var(--gato-red); letter-spacing: 2px; margin-bottom:30px;}
+.split-desc { font-size: 1rem; line-height: 1.6; font-weight: bold; color: #444; border-left: 4px solid var(--gato-black); padding-left: 10px; text-transform: none; margin-bottom: 15px; margin-top:0; }
+
+/* =========================================
+   6. GRILLES & CARTES (Discographie & Artistes)
+   ========================================= */
+
+/* --- Layouts des Grilles --- */
+/* Grille pour les sorties (Grosse taille) */
+.grid-discographie { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+  gap: 25px; 
+  margin-bottom: 60px; 
+}
+@media (min-width: 768px) {
+  .grid-discographie { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 30px; }
+}
+
+/* Grille spécifique pour les Artistes (Plus petite pour 3+ par ligne) */
+.artist-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* Plus petit sur mobile */
+  gap: 20px; 
+  margin-bottom: 60px; 
+}
+@media (min-width: 768px) {
+  .artist-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 25px; } /* Plus petit sur PC */
+}
+
+.release-card { display: flex; flex-direction: column; cursor: pointer; position: relative; z-index: 1; }
+.release-card:hover { z-index: 10; }
+
+.release-info { margin-top: 15px; }
+.release-info h3 { margin: 0; font-size: 1.4rem; font-weight: 900; text-transform: none; font-family: "Instrument Serif"; }
+.release-info p { margin: 4px 0 0 0; color: var(--gato-red); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px;}
+
+/* --- Base de la Pochette --- */
+.cover-physique { 
+  width: 100%; aspect-ratio: 1/1; 
+  border: 2px solid var(--gato-black); 
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1); 
+  position: relative; overflow: hidden; 
+  background-color: var(--gato-black); 
+  display: flex; justify-content: center; align-items: center; 
+  color: var(--gato-cream); font-weight: 900; font-size: 2rem; 
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease; 
+}
+.cover-physique img {
+  width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; display: block;
+}
+
+/* Le Sticker interne */
+.cover-physique .gato-sticker { 
+  position: absolute; top: 8px; right: 8px; z-index: 10; 
+  font-size: 9px; padding: 4px 8px; 
+  border: 1.5px solid var(--gato-black); box-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
+}
+.cover-physique .gato-sticker.black { background: var(--gato-black); }
+
+/* =========================================
+   7. EFFET PLASTIQUE / BLISTER & HOVER GLOBAL
+   ========================================= */
+
+.interactive-cover {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+
+/* 1. L'épaisseur du plastique */
+.interactive-cover::after {
+  content: ''; 
+  position: absolute; 
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    110deg, 
+    rgba(255,255,255,0) 20%, rgba(255,255,255,0.15) 25%, 
+    rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, 
+    rgba(255,255,255,0.08) 75%, rgba(255,255,255,0) 80%
+  );
+  box-shadow: inset 1px 1px 3px rgba(255,255,255,0.5), inset -1px -1px 4px rgba(0,0,0,0.15);
+  pointer-events: none;
+  z-index: 5;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  transform: none; 
+}
+
+/* 2. La texture plastique en image */
+.interactive-cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: var(--plastic-bg, url('/assets/plastic1.jpeg')); 
+  transform: var(--plastic-transform, none);
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  mix-blend-mode: screen; 
+  opacity: 0.15; 
+  pointer-events: none;
+  z-index: 6;
+  transition: opacity 0.3s ease;
+}
+
+/* 3. LE HOVER UNIFIÉ : Fonctionne PARTOUT (Grilles + Pages de détails Release) */
+.release-card:hover .interactive-cover,
+.split-visual.interactive-cover:hover,
+.split-visual.interactive-visual:hover { 
+  transform: translateY(-4px) scale(1.02) translateZ(0) !important; 
+  -webkit-transform: translateY(-4px) scale(1.02) translateZ(0) !important;
+  box-shadow: 8px 12px 0px rgba(0,0,0,0.2) !important; 
+}
+
+/* 4. Le reflet de lumière au survol */
+.release-card:hover .interactive-cover::after,
+.split-visual.interactive-cover:hover::after,
+.artist-cover:hover::after,
+.split-visual.artist-visual:hover::after { 
+  opacity: 0.9;
+  background: linear-gradient(
+    110deg, 
+    rgba(255,255,255,0) 15%, rgba(255,255,255,0.2) 25%, 
+    rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, 
+    rgba(255,255,255,0.12) 75%, rgba(255,255,255,0) 85%
+  );
+}
+
+.release-card:hover .interactive-cover::before,
+.split-visual.interactive-cover:hover::before,
+.artist-cover:hover::before,
+.split-visual.artist-visual:hover::before {
+  opacity: 0.3; 
+}
+
+/* =========================================
+   8. PAGE RELEASE DÉTAILLÉE (Tracklist, Boutons, Crédits)
+   ========================================= */
+
+/* Colonne de gauche (Pochette + Boutons) */
+.split-left { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 400px; }
+.release-actions { display: flex; flex-direction: column; gap: 10px; }
+.gato-btn.full-width { width: 100%; text-align: center; }
+
+/* Titres de sections (Tracklist & Credits) */
+.section-mini-title { 
+  font-size: 0.85rem; font-weight: 900; color: var(--gato-red); 
+  border-bottom: 2px solid var(--gato-black); padding-bottom: 5px; 
+  margin: 30px 0 15px 0; 
+}
+
+/* Tracklist */
+.tracklist-list { 
+  list-style: none; padding: 0; margin: 0; 
+  font-weight: bold; font-size: 0.95rem; color: #444; 
+  text-transform: none; 
+}
+.tracklist-list li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.tracklist-list li:last-child { border-bottom: none; }
+
+/* Copyright */
+.copyright-text { 
+  font-size: 0.7rem; font-weight: 900; color: #888; 
+  letter-spacing: 1px; 
+}
+
+/* Crédits structurés (Style Éditorial / Discret) */
+.credits-grid {
+  display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 30px; 
+}
+
+/* Ligne de séparation plus douce (façon "reçu" ou livret) */
+.credit-item { 
+  display: flex; justify-content: space-between; 
+  border-bottom: 1px solid rgba(0,0,0,0.08); 
+  padding-bottom: 4px; 
+}
+
+/* Le Rôle : Discret, en gris moyen, un poil plus petit */
+.credit-role { 
+  font-weight: bold; 
+  color: #888; 
+  font-size: 0.75rem; 
+  letter-spacing: 1px;
+}
+
+/* Le Nom : Noir, bien lisible, c'est l'info principale */
+.credit-value { 
+  font-weight: 900; 
+  text-align: right; 
+  font-size: 0.8rem; 
+  text-transform: uppercase;
+  color: var(--gato-black);
+}
+/* =========================================
+   9. ARTISTES (Ronds & Animés, sans plastique)
+   ========================================= */
+
+.artist-cover {
+  width: 100%; aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 2px solid var(--gato-black);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  position: relative; overflow: hidden;
+  background-color: var(--gato-black);
+  display: flex; justify-content: center; align-items: center;
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+.artist-cover img { 
+  width: 100%; height: 100%; object-fit: cover; display: block; 
+}
+
+.release-card:hover .artist-cover {
+  transform: translateY(-4px) scale(1.02) translateZ(0) !important;
+  box-shadow: 8px 12px 0px rgba(0,0,0,0.15) !important;
+}
+
+.split-visual.artist-visual {
+  border-radius: 50%;
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+.split-visual.artist-visual img {
+  border-radius: 50%;
+}
+
+.split-visual.artist-visual:hover {
+  transform: translateY(-4px) scale(1.02) translateZ(0) !important;
+  box-shadow: 12px 16px 0px rgba(0,0,0,0.15) !important;
+}
+
+.split-visual.artist-visual .gato-sticker {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  bottom: -15px;
+}
+
+.roster-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+@media (min-width: 900px) {
+  .roster-split {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.roster-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   ANIMATIONS DE CHANGEMENT DE PAGE
+   ========================================= */
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px); /* La nouvelle page monte légèrement en arrivant */
+}
+
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px); /* L'ancienne page s'efface vers le haut */
+}
+
+/* =========================================
+   ANIMATION D'APPARITION DES ÉLÉMENTS (CORRIGÉE)
+   ========================================= */
+
+@keyframes item-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.release-card, .artist-column, .split-left, .split-visual-wrapper, .split-info > * {
+  opacity: 0; 
+  animation: item-entrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================
+   VISUALS & YOUTUBE PLAYERS
+   ========================================= */
+.visuals-section { 
+  margin-top: 60px; 
+}
+
+.videos-grid { 
+  display: grid; 
+  gap: 40px; 
+  grid-template-columns: 1fr; 
+}
+
+/* S'il y a plus d'une vidéo, on les met côte à côte sur PC */
+@media (min-width: 900px) {
+  .videos-grid:not(.single-video) { grid-template-columns: 1fr 1fr; }
+}
+
+.video-container { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.video-title { 
+  font-size: 0.95rem; 
+  font-weight: 900; 
+  color: var(--gato-black);
+  border-bottom: 2px solid var(--gato-black); 
+  padding-bottom: 5px; 
+  margin: 0 0 15px 0; 
+  text-transform: uppercase;
+}
+
+.iframe-wrapper { 
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: 16/9; 
+  border: 4px solid var(--gato-black); 
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.1); 
+  background-color: var(--gato-black); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iframe-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.15);
+}
+
+.iframe-wrapper iframe { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+}
+
+/* Limiter la taille de la vidéo si elle est seule */
+.videos-grid.single-video {
+  max-width: 800px; /* Taille max raisonnable */
+  /* margin: 0 auto; <-- Décommente cette ligne si tu préfères la centrer sur la page */
+}
+
+/* Cascade rythmée et propre */
+.grid-discographie .release-card:nth-child(1), .artist-grid .release-card:nth-child(1) { animation-delay: 0.08s; }
+.grid-discographie .release-card:nth-child(2), .artist-grid .release-card:nth-child(2) { animation-delay: 0.18s; }
+.grid-discographie .release-card:nth-child(3), .artist-grid .release-card:nth-child(3) { animation-delay: 0.28s; }
+.grid-discographie .release-card:nth-child(4), .artist-grid .release-card:nth-child(4) { animation-delay: 0.38s; }
+.grid-discographie .release-card:nth-child(n+5), .artist-grid .release-card:nth-child(n+5) { animation-delay: 0.48s; }
