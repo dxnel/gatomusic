@@ -1,12 +1,10 @@
 <template>
   <div class="pack-wrapper">
-    <!-- LE HEADER CHEVRON ROUGE -->
     <header class="pack-header">
       <h1 class="brand-title instrument-serif">GATO</h1>
       <div class="brand-subtitle">EST. 2025</div>
     </header>
 
-    <!-- NAVIGATION COMPACTE SOUS LE HEADER -->
     <nav class="navbar">
       <ul class="nav-links">
         <li><router-link to="/">HOME</router-link></li>
@@ -37,9 +35,8 @@
           >
             PROJECTS
           </router-link>
-          
         </li>
-        <!-- ICI : On ajoute la balise <li> manquante autour de ABOUT -->
+
         <li>
           <router-link 
             to="/about" 
@@ -51,7 +48,6 @@
       </ul>
     </nav>
 
-    <!-- LE CONTENU DES PAGES AVEC TRANSITION FLUIDE -->
     <main class="vue-main-layout">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
@@ -60,7 +56,6 @@
       </router-view>
     </main>
 
-    <!-- LE FOOTER -->
     <footer class="pack-footer">
       <img src="./assets/GATO_LogoPPBlack-1000.png" alt="GATO Seal" class="footer-seal">
       <div class="contact-info">

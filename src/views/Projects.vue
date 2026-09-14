@@ -26,7 +26,6 @@ const getImageUrl = (imagePath) => {
       NO PUBLIC PROJECTS AT THIS TIME. ACCESS RESTRICTED.
     </div>
 
-    <!-- LA NOUVELLE GRILLE COMPACTE -->
     <div v-else class="projects-grid">
       <router-link 
         v-for="project in projects" 
@@ -34,13 +33,11 @@ const getImageUrl = (imagePath) => {
         :to="'/project/' + project.id" 
         class="project-card"
       >
-        <!-- L'image en haut de la carte -->
         <div class="project-visual">
           <div class="gato-sticker">{{ project.type }}</div>
           <img v-if="project.thumbnail" :src="getImageUrl(project.thumbnail)" :alt="project.title">
         </div>
 
-        <!-- Les infos en dessous -->
         <div class="project-info">
           <h2>{{ project.title }}</h2>
           
@@ -58,8 +55,6 @@ const getImageUrl = (imagePath) => {
               <span class="meta-value">{{ project.date }}</span>
             </div>
           </div>
-          
-          
         </div>
       </router-link>
     </div>
@@ -67,9 +62,6 @@ const getImageUrl = (imagePath) => {
 </template>
 
 <style scoped>
-/* =========================================
-   PROJECTS GRID (Beaucoup plus compact)
-   ========================================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -86,6 +78,8 @@ const getImageUrl = (imagePath) => {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: inherit;
   text-decoration: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .project-card:hover {
@@ -96,7 +90,7 @@ const getImageUrl = (imagePath) => {
 .project-visual {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9; /* Format classique propre */
+  aspect-ratio: 16/9;
   border-bottom: 4px solid var(--gato-black);
   background-color: var(--gato-black);
   overflow: hidden;
@@ -125,12 +119,12 @@ const getImageUrl = (imagePath) => {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Permet au bouton de s'aligner en bas si les cartes ont des tailles différentes */
+  flex-grow: 1; 
 }
 
 .project-info h2 {
   font-family: "Instrument Serif", serif;
-  font-size: 2rem; /* Plus petit ! */
+  font-size: 2rem; 
   font-weight: normal;
   text-transform: none;
   margin: 0 0 15px 0;

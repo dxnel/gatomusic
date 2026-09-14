@@ -15,7 +15,6 @@ const artistInfo = computed(() => {
   }
 })
 
-// Ajout du fix image au cas où tu utilises src/assets/ pour tes covers
 const getImageUrl = (imagePath) => {
   if (!imagePath) return ''
   if (imagePath.startsWith('public') || imagePath.startsWith('http')) {
@@ -27,7 +26,6 @@ const getImageUrl = (imagePath) => {
   return imagePath
 }
 
-// Fonction aléatoire plastifiée nettoyée et raccourcie
 const getPlasticStyle = (id) => {
   if (!id) return {}
   let hash = 0
@@ -47,14 +45,11 @@ const getPlasticStyle = (id) => {
     <router-link to="/discography" class="gato-back">← BACK TO DISCOGRAPHY</router-link>
 
     <div class="split-layout">
-      
-      <!-- COLONNE GAUCHE -->
       <div class="split-left">
         <div class="split-visual interactive-cover" :style="getPlasticStyle(release.id)">
           <img v-if="release.cover" :src="getImageUrl(release.cover)" :alt="release.title">
         </div>
 
-        <!-- BOUTONS UNIQUEMENT SUR PC (desktop-buttons) -->
         <div class="release-actions desktop-buttons" v-if="release.links?.length">
           <a v-for="(link, index) in release.links" :key="index" :href="link.url" target="_blank" class="gato-btn full-width" :class="{ 'green-btn': index === 0 }">
             <svg v-if="index === 0" class="btn-icon" viewBox="0 0 256 256" width="20" height="20">
@@ -65,7 +60,6 @@ const getPlasticStyle = (id) => {
         </div>
       </div>
 
-      <!-- COLONNE DROITE : INFOS -->
       <div class="split-info">
         <h1 class="split-title title-serif">{{ release.title }}</h1>
         <h2 class="split-subtitle">
@@ -76,7 +70,6 @@ const getPlasticStyle = (id) => {
         
         <p class="split-desc" v-if="release.desc" v-html="release.desc"></p>
 
-        <!-- BOUTONS UNIQUEMENT SUR MOBILE (mobile-buttons) -->
         <div class="release-actions mobile-buttons" v-if="release.links?.length">
           <a v-for="(link, index) in release.links" :key="index" :href="link.url" target="_blank" class="gato-btn full-width" :class="{ 'green-btn': index === 0 }">
             <svg v-if="index === 0" class="btn-icon" viewBox="0 0 256 256" width="20" height="20">
@@ -109,13 +102,11 @@ const getPlasticStyle = (id) => {
       </div>
     </div>
 
-    <!-- NOUVELLE SECTION VISUALS (En dessous du split-layout pour respirer) -->
     <div class="visuals-section" v-if="release.videos && release.videos.length">
       <div class="section-header">
         <h2>VISUALS</h2>
       </div>
       
-      <!-- Grille dynamique : s'il y a 1 vidéo elle prend tout, si plusieurs ça fait une grille -->
       <div class="videos-grid" :class="{'single-video': release.videos.length === 1}">
         <div class="video-container" v-for="(vid, index) in release.videos" :key="index">
           <h3 class="video-title">{{ vid.title }}</h3>

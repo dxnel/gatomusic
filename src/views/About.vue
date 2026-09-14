@@ -1,7 +1,5 @@
 <template>
   <div class="section">
-    
-    <!-- SECTION ABOUT -->
     <section class="section gato-manifesto" style="margin-bottom: 60px;">
       <div class="section-header">
         <h1>ABOUT GATO</h1>
@@ -26,14 +24,12 @@
       </div>
     </section>
 
-    <!-- SECTION CONTACT -->
     <section class="section" style="margin-bottom: 80px;">
       <div class="section-header">
         <h1>CONTACT</h1>
       </div>
 
       <div class="manifesto-grid">
-        <!-- Colonne Gauche : Canaux directs (Label + Direct perso) -->
         <div class="manifesto-text">
           <h2>DIRECT CHANNELS</h2>
           <ul class="contact-list">
@@ -48,7 +44,6 @@
           </ul>
         </div>
 
-        <!-- Colonne Droite : Bouton d'action direct par mail -->
         <div class="manifesto-text" style="display: flex; flex-direction: column; justify-content: center;">
           <h2>GET IN TOUCH</h2>
           <p style="margin-bottom: 25px;">
@@ -60,12 +55,8 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .manifesto-text h2 {

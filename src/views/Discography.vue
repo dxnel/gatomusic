@@ -4,18 +4,16 @@ import database from '../data/database.json'
 
 const allReleases = ref(database.releases)
 const artists = ref(database.artists)
-const activeFilter = ref('ALL') // Le filtre par défaut
+const activeFilter = ref('ALL')
 
 const getArtistName = (artistId) => {
   const artist = artists.value.find(a => a.id === artistId)
   return artist ? artist.name : 'Unknown Artist'
 }
 
-// LOGIQUE DE FILTRAGE
 const filteredReleases = computed(() => {
   let list = allReleases.value
 
-  // Filtrage Label / Distribution
   if (activeFilter.value !== 'ALL') {
     list = list.filter(release => {
       const artist = artists.value.find(a => a.id === release.artist_id)
@@ -26,12 +24,9 @@ const filteredReleases = computed(() => {
     })
   }
 
-  // Tri par date (du plus récent au plus ancien)
   return [...list].sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
-  
 })
 
-// Fonction pour générer un "faux aléatoire" basé sur l'ID de l'item
 const getPlasticStyle = (id) => {
   if (!id) return {}
   
@@ -40,22 +35,17 @@ const getPlasticStyle = (id) => {
     hash = id.charCodeAt(i) + ((hash << 5) - hash);
   }
   const absHash = Math.abs(hash);
-  
-  // On choisit la texture (1 à 4)
   const textureNum = (absHash % 4) + 1;
-  
   const rotations = [0, 90, 180, 270];
   const rotation = rotations[absHash % 4];
   const scaleX = (absHash % 2) === 0 ? 1 : -1;
   const scaleY = (absHash % 3) === 0 ? 1 : -1;
 
-  // LE SECRET EST ICI : Le "/" initial pointe directement vers le dossier "public" !
   return {
     '--plastic-bg': `url('/assets/plastic${textureNum}.jpeg')`,
     '--plastic-transform': `rotate(${rotation}deg) scale(${scaleX}, ${scaleY})`
   }
 }
-
 </script>
 
 <template>
@@ -72,10 +62,7 @@ const getPlasticStyle = (id) => {
     </div>
 
     <div class="grid-discographie">
-      <!-- On boucle sur les sorties FILTRÉES -->
       <router-link v-for="release in filteredReleases" :key="release.id" :to="'/release/' + release.id" class="release-card">
-        
-        <!-- On ajoute "interactive-cover" et la VRAIE image -->
         <div class="cover-physique interactive-cover" :style="getPlasticStyle(release.id)">
           <img v-if="release.cover" :src="release.cover" :alt="release.title">
           <span v-else>GATO</span>
