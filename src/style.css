@@ -154,17 +154,13 @@ a { text-decoration: none; color: inherit; }
   background-image: url('/assets/cardboard.jpg');
   background-size: cover;
   background-position: center;
-  
-  /* On utilise soft-light, c'est beaucoup moins violent que multiply */
-  mix-blend-mode: color-burn; 
-  opacity: 0.1; /* Opacité baissée pour que ça reste un détail */
-  filter: grayscale(100%); /* TUE LA COULEUR MARRON, garde que le relief */
-  
+  mix-blend-mode: soft-light; 
+  opacity: 0.3; 
+  filter: grayscale(100%); 
   pointer-events: none;
   z-index: 0;
 }
 
-/* On s'assure que le texte du header reste bien au-dessus de la texture */
 .brand-title, .brand-subtitle {
   position: relative;
   z-index: 1;
