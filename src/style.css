@@ -266,7 +266,6 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 12px 12px 0px rgba(0,0,0,0.15); 
   position: relative;
   overflow: hidden;
-  object-fit: cover;
 }
 
 .hero-billboard img, .hero-billboard video {
@@ -303,7 +302,7 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 768px) {
   .billboard-wrapper { margin-bottom: 70px; }
-  .hero-billboard { aspect-ratio: 2 / 1; box-shadow: 6px 6px 0px rgba(0,0,0,0.15); object-fit: cover; }
+  .hero-billboard { aspect-ratio: 1.5 / 1; box-shadow: 6px 6px 0px rgba(0,0,0,0.15); }
   /* --- CURE D'AMINCISSEMENT DU BOUTON --- */
   .chameleon-btn { 
     padding: 8px 14px;      /* On réduit drastiquement le rembourrage */
