@@ -249,27 +249,83 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* --- 4. HOME & MANIFESTO --- */
-.hero {
-  position: relative; text-align: center; margin-bottom: 60px;
-  border: 2px solid var(--gato-black); display: flex; flex-direction: column;
-  justify-content: center; align-items: center; min-height: 50vh; overflow: hidden;
+.billboard-wrapper {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-.hero-bg img, .hero-bg video { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-  background: linear-gradient(135deg, rgba(214, 214, 214, 0.5) 0%, rgba(195, 195, 195, 0.3) 100%);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  will-change: backdrop-filter;
+
+.hero-billboard {
+  width: 100%;
+  aspect-ratio: 2 /1; 
+  border: 4px solid var(--gato-black);
+  background-color: var(--gato-black);
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.15); 
+  position: relative;
+  overflow: hidden;
 }
-.hero-content { position: relative; z-index: 2; padding: 60px 20px; }
-.hero-tag { color: var(--gato-red); font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; font-size: 14px; }
-.hero-title { font-size: clamp(32px, 5vw, 64px); margin: 0 0 30px 0; line-height: 1.1; font-weight: 900; letter-spacing: -1px; text-transform: none; }
-.hero-desc { font-size: 1rem; font-weight: bold; color: #1c1c1c; max-width: 600px; margin: 0 auto 30px auto; text-transform: none; line-height: 1.5; }
-.hero-actions { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
-.custom-hero-btn { border: 3px solid var(--gato-black); box-shadow: 4px 4px 0px var(--gato-black); }
-.custom-hero-btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--gato-black); opacity: 0.9; }
+
+.hero-billboard img, .hero-billboard video {
+  width: 100%; height: 100%; 
+  object-fit: cover; 
+  display: block;
+}
+
+.billboard-dock {
+  position: absolute;
+  bottom: -22px; 
+  z-index: 10;
+}
+.chameleon-btn {
+  font-size: 16px;
+  padding: 14px 28px;
+  border: 3px solid var(--gato-black);
+  box-shadow: 6px 6px 0px var(--gato-black);
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+.chameleon-btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px var(--gato-black);
+}
+
+.btn-icon { display: flex; align-items: center; }
+
+.btn-spotify { background-color: #1DB954; color: #fff; }
+.btn-tickets { background-color: var(--gato-red); color: #fff; }
+.btn-store { background-color: var(--gato-black); color: #fff; }
+.btn-default { background-color: var(--gato-red); color: #fff; }
+
+@media (max-width: 768px) {
+  .billboard-wrapper { margin-bottom: 70px; }
+  .hero-billboard { aspect-ratio: 1.5 / 1; box-shadow: 6px 6px 0px rgba(0,0,0,0.15); }
+  /* --- CURE D'AMINCISSEMENT DU BOUTON --- */
+  .chameleon-btn { 
+    padding: 8px 14px;      /* On réduit drastiquement le rembourrage */
+    font-size: 11px;        /* Texte plus petit */
+    border-width: 3px;      /* Bordure moins épaisse */
+    box-shadow: 4px 4px 0px var(--gato-black); /* Ombre plus courte */
+    gap: 8px;               /* Moins d'espace entre le logo et le texte */
+  }
+
+  .chameleon-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--gato-black);
+  }
+
+  .chameleon-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .billboard-dock {
+    bottom: -16px; 
+  }
+}
 
 .gato-manifesto { margin-bottom: 80px; }
 .manifesto-grid { display: grid; grid-template-columns: 1fr; padding: 0 0; gap: 40px; }

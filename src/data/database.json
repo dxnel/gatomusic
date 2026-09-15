@@ -25,19 +25,13 @@
   "___SECTION_2___": "=================== BANNIERE ACCUEIL (HERO) ===================",
 
   "hero": {
-    "tag": "&#x25B6;&#xFE0E; NEW RELEASE",
-    "title": "LOSER",
-    "description": "First single from w0ndr's upcoming EP: Loser's Diary",
     "mediaType": "image",
-    "mediaUrl": "./assets/losercoverv1.png",
-    "buttons": [
-      {
-        "text": "PRE-SAVE ON SPOTIFY",
-        "url": "/discography",
-        "bgColor": "#A81A1A",
-        "textColor": "#ffffff"
-      }
-    ]
+    "mediaUrl": "/assets/billboard-hero.png",
+    "button": {
+      "action": "spotify", 
+      "url": "https://spotify.com",
+      "customText": "PRE-SAVE LOSER"
+    }
   },
 
   "___SECTION_3___": "=================== ROSTER (ARTISTES) ===================",
