@@ -46,9 +46,13 @@ const getPlasticStyle = (id) => {
 
 <template>
   <div>
-    <div class="warning-label">
-      WARNING: HIGHLY ADDICTIVE MATERIAL. MAY CAUSE SEVERE EMOTIONAL DISTORTION AND SENSORY OVERLOAD. <span style="display:block">DO NOT PLAY AT LOW VOLUMES.</span>
-    </div>
+    <div class="warning-label slap-sticker">
+  <span class="sticker-text">
+    WARNING: HIGHLY ADDICTIVE MATERIAL. MAY CAUSE SEVERE<br>
+    EMOTIONAL DISTORTION AND SENSORY OVERLOAD.<br>
+    DO NOT PLAY AT LOW VOLUMES.
+  </span>
+</div>
 
     <div class="hero">
       <div class="hero-bg">
@@ -129,4 +133,6 @@ const getPlasticStyle = (id) => {
       </div>
     </section>
   </div>
+
+
 </template>

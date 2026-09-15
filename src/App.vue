@@ -1,9 +1,11 @@
 <template>
   <div class="pack-wrapper">
-    <header class="pack-header">
-      <h1 class="brand-title instrument-serif">GATO</h1>
-      <div class="brand-subtitle">EST. 2025</div>
-    </header>
+    <div class="header-shadow-wrapper">
+  <header class="pack-header">
+    <h1 class="brand-title instrument-serif">GATO</h1>
+    <div class="brand-subtitle">EST. 2025</div>
+  </header>
+</div>
 
     <nav class="navbar">
       <ul class="nav-links">
@@ -57,7 +59,9 @@
     </main>
 
     <footer class="pack-footer">
-      <img src="./assets/GATO_LogoPPBlack-1000.png" alt="GATO Seal" class="footer-seal">
+      <div class="footer-seal-wrapper">
+  <img src="./assets/GATO_LogoPPBlack-1000.png" class="footer-seal-flat">
+</div>
       <div class="contact-info">
         MANUFACTURED BY GATO<br>
         SWITZERLAND<br>
@@ -67,5 +71,13 @@
       </div>
       <div class="barcode-massive"></div>
     </footer>
+
+
+<svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+  <filter id="erode-edges">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
   </div>
 </template>
