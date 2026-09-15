@@ -151,7 +151,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('src/assets/cardboard.jpg');
+  background-image: url('/assets/cardboard.jpg');
   background-size: cover;
   background-position: center;
   
@@ -212,7 +212,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute; 
   top: 0; left: 0; 
   width: 100%; height: 100%;
-  background-image: url('src/assets/wl-bg.jpg'); 
+  background-image: url('/assets/wl-bg.jpg'); 
   background-size: cover; 
   background-position: center;
   mix-blend-mode: multiply; 
@@ -226,7 +226,7 @@ a { text-decoration: none; color: inherit; }
   position: absolute; 
   top: 0; left: 0; 
   width: 100%; height: 100%;
-  background-image: url('src/assets/wl-ov.jpg'); 
+  background-image: url('/assets/wl-ov.jpg'); 
   background-size: cover; 
   background-position: center;
   mix-blend-mode: multiply; 
