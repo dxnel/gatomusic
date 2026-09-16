@@ -85,34 +85,13 @@ const getButtonConfig = (action) => {
   </span>
 </div>
 
-    <!-- LE PANNEAU PUBLICITAIRE (BILLBOARD) -->
-    <div class="billboard-wrapper">
-      
-      <div class="hero-billboard">
-        <!-- L'image de fond remplit le cadre -->
+    <div class="billboard-wrapper" v-if="hero.mediaUrl">
+      <a :href="hero.linkUrl" target="_blank" class="hero-billboard">
+        
         <video v-if="hero.mediaType === 'video'" :src="hero.mediaUrl" autoplay muted loop playsinline></video>
         <img v-else :src="hero.mediaUrl" alt="GATO Promo">
-      </div>
-
-      <!-- LE BOUTON CAMÉLÉON ACCROCHÉ EN BAS -->
-      <div class="billboard-dock" v-if="hero.button">
-        <a 
-          :href="hero.button.url" 
-          target="_blank" 
-          class="gato-btn chameleon-btn"
-          :class="getButtonConfig(hero.button.action).bgClass"
-        >
-          <span 
-            v-if="getButtonConfig(hero.button.action).icon" 
-            class="btn-icon" 
-            v-html="getButtonConfig(hero.button.action).icon"
-          ></span>
-          
-          <!-- Utilise le customText s'il existe, sinon le texte par défaut -->
-          {{ hero.button.customText || getButtonConfig(hero.button.action).defaultText }}
-        </a>
-      </div>
-
+        
+      </a>
     </div>
 
     <section class="section gato-manifesto">

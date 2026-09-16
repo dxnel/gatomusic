@@ -248,49 +248,54 @@ a { text-decoration: none; color: inherit; }
   background: repeating-linear-gradient(90deg, #111, #111 4px, transparent 4px, transparent 8px, #111 8px, #111 10px, transparent 10px, transparent 16px);
 }
 
-/* --- 4. HOME & MANIFESTO --- */
 .billboard-wrapper {
   position: relative;
   max-width: 1300px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 70px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .hero-billboard {
+  display: block; 
   width: 100%;
-  aspect-ratio: 2 /1; 
+  aspect-ratio: 2 / 1; 
   border: 4px solid var(--gato-black);
   background-color: var(--gato-black);
   box-shadow: 12px 12px 0px rgba(0,0,0,0.15); 
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  
+  transform: translateZ(0);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 .hero-billboard img, .hero-billboard video {
   width: 100%; height: 100%; 
   object-fit: cover; 
   display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 0.7, 0.16, 0.7);
 }
 
-.billboard-dock {
-  position: absolute;
-  bottom: -22px; 
-  z-index: 10;
+/* --- ANIMATIONS HOVER ET ACTIVE --- */
+/* Au survol : le panneau se lève vers le haut à gauche */
+.hero-billboard:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 16px 16px 0px rgba(0,0,0,0.15);
 }
-.chameleon-btn {
-  font-size: 16px;
-  padding: 14px 28px;
-  border: 3px solid var(--gato-black);
-  box-shadow: 6px 6px 0px var(--gato-black);
-  display: flex;
-  align-items: center;
-  gap: 12px; 
+
+/* L'image zoome très légèrement pour donner de la profondeur */
+.hero-billboard:hover img, .hero-billboard:hover video {
+  transform: scale(1.02);
 }
-.chameleon-btn:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0px var(--gato-black);
+
+/* Au clic : le panneau s'écrase violemment (effet physique) */
+.hero-billboard:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.15);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .btn-icon { display: flex; align-items: center; }
@@ -301,30 +306,19 @@ a { text-decoration: none; color: inherit; }
 .btn-default { background-color: var(--gato-red); color: #fff; }
 
 @media (max-width: 768px) {
-  .billboard-wrapper { margin-bottom: 70px; }
-  .hero-billboard { aspect-ratio: 1.5 / 1; box-shadow: 6px 6px 0px rgba(0,0,0,0.15); }
-  /* --- CURE D'AMINCISSEMENT DU BOUTON --- */
-  .chameleon-btn { 
-    padding: 8px 14px;      /* On réduit drastiquement le rembourrage */
-    font-size: 11px;        /* Texte plus petit */
-    border-width: 3px;      /* Bordure moins épaisse */
-    box-shadow: 4px 4px 0px var(--gato-black); /* Ombre plus courte */
-    gap: 8px;               /* Moins d'espace entre le logo et le texte */
+  @media (max-width: 768px) {
+  .billboard-wrapper { margin-bottom: 50px; }
+  .hero-billboard { 
+    aspect-ratio: 1.5 / 1; 
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.15); 
   }
-
-  .chameleon-btn:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--gato-black);
+  
+  /* Ajustement de l'animation pour les doigts sur mobile */
+  .hero-billboard:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.15);
   }
-
-  .chameleon-btn svg {
-    width: 14px !important;
-    height: 14px !important;
-  }
-
-  .billboard-dock {
-    bottom: -16px; 
-  }
+}
 }
 
 .gato-manifesto { margin-bottom: 80px; }

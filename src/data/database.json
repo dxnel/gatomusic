@@ -27,11 +27,7 @@
   "hero": {
     "mediaType": "image",
     "mediaUrl": "/assets/billboard-hero.png",
-    "button": {
-      "action": "spotify", 
-      "url": "https://spotify.com",
-      "customText": "PRE-SAVE ON SPOTIFY"
-    }
+    "linkUrl": "https://spotify.com"
   },
 
   "___SECTION_3___": "=================== ROSTER (ARTISTES) ===================",
