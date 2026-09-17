@@ -74,24 +74,31 @@ const getImageUrl = (imagePath) => {
   flex-direction: column;
   border: 2px solid var(--gato-black);
   background-color: #e8e3d8;
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.1); 
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: inherit;
   text-decoration: none;
+  color: inherit;
+  position: relative;
   transform: translateZ(0);
   backface-visibility: hidden;
+  border-radius: 20px;
+
+  opacity: 1 !important;
+  animation-fill-mode: backwards !important;
+  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 10px 10px 0px rgba(0,0,0,0.15);
+  transform: translateY(-4px) scale(1.02) translateZ(0) !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px !important;
+  z-index: 10;
 }
 
 .project-visual {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  border-bottom: 4px solid var(--gato-black);
+  border-bottom: 2px solid var(--gato-black);
   background-color: var(--gato-black);
   overflow: hidden;
 }
@@ -102,6 +109,7 @@ const getImageUrl = (imagePath) => {
   object-fit: cover;
   display: block;
   transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .project-card:hover .project-visual img {
@@ -120,6 +128,22 @@ const getImageUrl = (imagePath) => {
   display: flex;
   flex-direction: column;
   flex-grow: 1; 
+}
+
+.project-info:before {
+  content: '';
+  
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  pointer-events: none; 
+  background-image: url('/assets/wl-bg.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  mix-blend-mode: soft-light; 
+  opacity: 0.5; 
 }
 
 .project-info h2 {

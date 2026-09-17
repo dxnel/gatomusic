@@ -85,23 +85,23 @@ const getPlatformColor = (platform) => {
             :style="{ backgroundColor: getPlatformColor(platform) }"
           >
             <!-- SPOTIFY -->
-            <svg v-if="platform.toLowerCase() === 'spotify'" class="btn-icon" viewBox="0 0 256 256" width="24" height="24" fill="currentColor">
+            <svg v-if="platform.toLowerCase() === 'spotify'" class="btn-icon" viewBox="0 0 256 256" width="30" height="30" fill="currentColor">
               <path d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128c70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644c-30.053-18.357-67.885-22.515-112.44-12.335a7.98 7.98 0 0 1-9.552-6.007a7.97 7.97 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276c3.76 2.308 4.952 7.215 2.644 10.975m15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289c-34.406-21.148-86.853-27.273-127.548-14.92c-5.278 1.594-10.852-1.38-12.454-6.649c-1.59-5.278 1.386-10.842 6.655-12.446c46.485-14.106 104.275-7.273 143.787 17.007c4.692 2.89 6.175 9.034 3.286 13.72zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978c-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405c-3.362 5.69-10.73 7.565-16.4 4.187z"/>
             </svg>
             <!-- INSTAGRAM -->
-            <svg v-else-if="platform.toLowerCase() === 'instagram'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <svg v-else-if="platform.toLowerCase() === 'instagram'" class="btn-icon" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
             <!-- YOUTUBE -->
-            <svg v-else-if="platform.toLowerCase() === 'youtube'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <svg v-else-if="platform.toLowerCase() === 'youtube'" class="btn-icon" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
             <!-- TIKTOK -->
-            <svg v-else-if="platform.toLowerCase() === 'tiktok'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <svg v-else-if="platform.toLowerCase() === 'tiktok'" class="btn-icon" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
               <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.53-.42 3.11-1.37 4.31-1.09 1.39-2.73 2.29-4.5 2.5-1.92.23-3.95-.12-5.5-1.29-1.55-1.16-2.58-2.9-2.9-4.78-.34-2.02.09-4.18 1.25-5.83 1.26-1.8 3.32-2.9 5.5-3.05v4.06c-1.07.13-2.14.7-2.76 1.59-.6.86-.81 1.95-.58 2.97.23 1.01.89 1.88 1.77 2.41 1.03.62 2.33.68 3.42.27 1.14-.42 2.01-1.4 2.29-2.57.1-.41.13-.84.14-1.27V.02z"/>
             </svg>
             <!-- SOUNDCLOUD -->
-            <svg v-else-if="platform.toLowerCase() === 'soundcloud'" class="btn-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <svg v-else-if="platform.toLowerCase() === 'soundcloud'" class="btn-icon" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
               <path d="M20.66 10.71a3.82 3.82 0 0 0 -0.68 0.07 5.47 5.47 0 0 0 -5.39 -4.4 5.56 5.56 0 0 0 -2 0.37 0.84 0.84 0 0 0 -0.6 0.8v9a0.84 0.84 0 0 0 0.8 0.83h7.85a3.33 3.33 0 0 0 0 -6.66Z"></path>
               <path d="M9.74 7.11a0.75 0.75 0 0 0 -0.74 0.75v9a0.75 0.75 0 0 0 1.5 0v-9a0.76 0.76 0 0 0 -0.76 -0.75Z"></path>
               <path d="M6.75 8.61a0.75 0.75 0 0 0 -0.75 0.75v7.51a0.75 0.75 0 0 0 1.5 0V9.36a0.76 0.76 0 0 0 -0.75 -0.75Z"></path>
@@ -184,29 +184,34 @@ const getPlatformColor = (platform) => {
 .project-card {
   display: flex;
   flex-direction: column;
-  border: 3px solid var(--gato-black);
+  border: 2px solid var(--gato-black);
   background-color: #e8e3d8;
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit;
   position: relative;
   transform: translateZ(0);
   backface-visibility: hidden;
+  border-radius: 20px;
+
+  opacity: 1 !important;
+  animation-fill-mode: backwards !important;
+  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 10px 10px 0px rgba(0,0,0,0.15);
+  transform: translateY(-4px) scale(1.02) translateZ(0) !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px !important;
   z-index: 10;
 }
 
 .project-visual {
+  position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  border-bottom: 3px solid var(--gato-black);
+  border-bottom: 2px solid var(--gato-black);
   background-color: var(--gato-black);
-  position: relative;
   overflow: hidden;
 }
 
@@ -231,6 +236,22 @@ const getPlatformColor = (platform) => {
 
 .project-info {
   padding: 15px;
+}
+
+.project-info:before {
+  content: '';
+  
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  pointer-events: none; 
+  background-image: url('/assets/wl-bg.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  mix-blend-mode: soft-light; 
+  opacity: 0.5; 
 }
 
 .project-info h3 {
