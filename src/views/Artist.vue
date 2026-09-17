@@ -47,10 +47,10 @@ const getPlatformColor = (platform) => {
   const p = platform.toLowerCase()
   if (p === 'spotify') return '#1DB954'
   if (p === 'youtube') return '#FF0000'
-  if (p === 'tiktok') return 'var(--gato-black)'
+  if (p === 'tiktok') return '#fe2858'
   if (p === 'instagram') return '#E1306C'
-  if (p === 'soundcloud') return '#FF5500' // Orange Soundcloud
-  if (p === 'linktree') return '#43E660'   // Vert Linktree
+  if (p === 'soundcloud') return '#FF5500' 
+  if (p === 'linktree') return '#43E660'   
   return '' 
 }
 </script>

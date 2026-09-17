@@ -34,7 +34,7 @@ body::before {
 }
 
 a { text-decoration: none; color: inherit; }
-* { box-sizing: border-box; font-variant-emoji: text; }
+* { box-sizing: border-box; font-variant-emoji: text; -webkit-tap-highlight-color: transparent; }
 
 .title-serif, .instrument-serif { 
   font-family: "Instrument Serif", serif; 
@@ -60,8 +60,6 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex; justify-content: center; align-items: center;
   transform: translateZ(0);
 }
-.gato-btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--gato-black); }
-.gato-btn:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px var(--gato-black); opacity: 0.9; }
 
 .gato-btn.green-btn { background-color: #1DB954; color: #fff; gap: 10px; }
 .social-btn { display: inline-flex; align-items: center; justify-content: center; }
@@ -118,13 +116,8 @@ a { text-decoration: none; color: inherit; }
   height: 100%;
   border-radius: 50%;
   display: block;
-  
-
-  
-  /* Laisse le dos visible, il sera naturellement inversé (miroir) */
   backface-visibility: visible; 
   transform-style: preserve-3d;
-  
   animation: flat-spin 4s linear infinite;
 }
 
@@ -192,7 +185,6 @@ a { text-decoration: none; color: inherit; }
   font-size: 1.5rem; 
   font-weight: 900; 
   line-height: 1.2;
-  
   position: relative; 
   z-index: 10;
   overflow: hidden; 
@@ -226,7 +218,7 @@ a { text-decoration: none; color: inherit; }
   background-size: cover; 
   background-position: center;
   mix-blend-mode: multiply; 
-  opacity: 0.8; /* À ajuster */
+  opacity: 0.8; 
   filter: brightness(100%) contrast(150%) grayscale(100%);
   pointer-events: none; 
   z-index: 3;
@@ -267,7 +259,6 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  
   transform: translateZ(0);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
@@ -279,25 +270,6 @@ a { text-decoration: none; color: inherit; }
   transition: transform 0.6s cubic-bezier(0.16, 0.7, 0.16, 0.7);
 }
 
-/* --- ANIMATIONS HOVER ET ACTIVE --- */
-/* Au survol : le panneau se lève vers le haut à gauche */
-.hero-billboard:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 16px 16px 0px rgba(0,0,0,0.15);
-}
-
-/* L'image zoome très légèrement pour donner de la profondeur */
-.hero-billboard:hover img, .hero-billboard:hover video {
-  transform: scale(1.02);
-}
-
-/* Au clic : le panneau s'écrase violemment (effet physique) */
-.hero-billboard:active {
-  transform: translate(6px, 6px);
-  box-shadow: 0px 0px 0px rgba(0,0,0,0.15);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
 .btn-icon { display: flex; align-items: center; }
 
 .btn-spotify { background-color: #1DB954; color: #fff; }
@@ -306,19 +278,11 @@ a { text-decoration: none; color: inherit; }
 .btn-default { background-color: var(--gato-red); color: #fff; }
 
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
   .billboard-wrapper { margin-bottom: 50px; }
   .hero-billboard { 
     aspect-ratio: 1.5 / 1; 
     box-shadow: 6px 6px 0px rgba(0,0,0,0.15); 
   }
-  
-  /* Ajustement de l'animation pour les doigts sur mobile */
-  .hero-billboard:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0px rgba(0,0,0,0.15);
-  }
-}
 }
 
 .gato-manifesto { margin-bottom: 80px; }
@@ -407,18 +371,6 @@ a { text-decoration: none; color: inherit; }
   mix-blend-mode: screen; opacity: 0.15; pointer-events: none; z-index: 6; transition: opacity 0.3s ease;
 }
 
-.release-card:hover .interactive-cover, .split-visual.interactive-cover:hover, .split-visual.interactive-visual:hover { 
-  transform: translateY(-4px) scale(1.02) translateZ(0) !important; 
-  -webkit-transform: translateY(-4px) scale(1.02) translateZ(0) !important;
-  box-shadow: 8px 12px 0px rgba(0,0,0,0.2) !important; 
-}
-
-.release-card:hover .interactive-cover::after, .split-visual.interactive-cover:hover::after, .artist-cover:hover::after, .split-visual.artist-visual:hover::after { 
-  opacity: 0.9; background: linear-gradient(110deg, rgba(255,255,255,0) 15%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.12) 75%, rgba(255,255,255,0) 85%);
-}
-
-.release-card:hover .interactive-cover::before, .split-visual.interactive-cover:hover::before, .artist-cover:hover::before, .split-visual.artist-visual:hover::before { opacity: 0.3; }
-
 /* --- 8. RELEASE DETAILS --- */
 .split-left { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 400px; }
 .release-actions { display: flex; flex-direction: column; gap: 10px; }
@@ -444,11 +396,9 @@ a { text-decoration: none; color: inherit; }
   backface-visibility: hidden;
 }
 .artist-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.release-card:hover .artist-cover { transform: translateY(-4px) scale(1.02) translateZ(0) !important; box-shadow: 8px 12px 0px rgba(0,0,0,0.15) !important; }
 
 .split-visual.artist-visual { border-radius: 50%; transform: translateZ(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important; backface-visibility: hidden; }
 .split-visual.artist-visual img { border-radius: 50%; }
-.split-visual.artist-visual:hover { transform: translateY(-4px) scale(1.02) translateZ(0) !important; box-shadow: 12px 16px 0px rgba(0,0,0,0.15) !important; }
 .split-visual.artist-visual .gato-sticker { right: auto; left: 50%; transform: translateX(-50%); top: auto; bottom: -15px; }
 
 .roster-split { display: grid; grid-template-columns: 1fr; gap: 60px; }
@@ -477,12 +427,77 @@ a { text-decoration: none; color: inherit; }
 .video-title { font-size: 0.95rem; font-weight: 900; color: var(--gato-black); border-bottom: 2px solid var(--gato-black); padding-bottom: 5px; margin: 0 0 15px 0; text-transform: uppercase; }
 
 .iframe-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; border: 4px solid var(--gato-black); box-shadow: 8px 8px 0px rgba(0,0,0,0.1); background-color: var(--gato-black); transition: transform 0.3s ease, box-shadow 0.3s ease; transform: translateZ(0); backface-visibility: hidden;}
-.iframe-wrapper:hover { transform: translateY(-4px) translateZ(0); box-shadow: 12px 12px 0px rgba(0,0,0,0.15); }
 .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .videos-grid.single-video { max-width: 800px; }
 
 .mobile-buttons { display: none !important; }
 .desktop-buttons { display: flex !important; }
+
+/* =========================================================
+   ANIMATIONS DE SURVOL (UNIQUEMENT PC / SOURIS)
+   ========================================================= */
+@media (hover: hover) and (pointer: fine) {
+  
+  /* 1. Le Billboard */
+  .hero-billboard:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 16px 16px 0px rgba(0,0,0,0.15);
+  }
+  .hero-billboard:hover img, .hero-billboard:hover video {
+    transform: scale(1.02);
+  }
+
+  /* 2. Les Boutons classiques */
+  .gato-btn:hover { 
+    transform: translate(2px, 2px); 
+    box-shadow: 2px 2px 0px var(--gato-black); 
+  }
+
+  /* 3. Les Covers (Releases & Artistes) */
+  .release-card:hover .interactive-cover, 
+  .release-card:hover .artist-cover, 
+  .split-visual.interactive-cover:hover, 
+  .split-visual.interactive-visual:hover,
+  .split-visual.artist-visual:hover { 
+    transform: translateY(-4px) scale(1.02) translateZ(0) !important; 
+    box-shadow: 8px 12px 0px rgba(0,0,0,0.2) !important; 
+  }
+
+  /* Les reflets plastiques au survol */
+  .release-card:hover .interactive-cover::after, 
+  .split-visual.interactive-cover:hover::after, 
+  .artist-cover:hover::after, 
+  .split-visual.artist-visual:hover::after { 
+    opacity: 0.9; 
+    background: linear-gradient(110deg, rgba(255,255,255,0) 15%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.12) 75%, rgba(255,255,255,0) 85%);
+  }
+  .release-card:hover .interactive-cover::before, 
+  .split-visual.interactive-cover:hover::before, 
+  .artist-cover:hover::before, 
+  .split-visual.artist-visual:hover::before { 
+    opacity: 0.3; 
+  }
+
+  /* 4. Les Vidéos YouTube */
+  .iframe-wrapper:hover { 
+    transform: translateY(-4px) translateZ(0); 
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.15); 
+  }
+}
+
+/* =========================================================
+   PHYSIQUE DU CLIC / TAP (MOBILE ET PC)
+   ========================================================= */
+.hero-billboard:active,
+.gato-btn:active,
+.release-card:active .interactive-cover,
+.release-card:active .artist-cover,
+.split-visual.artist-visual:active,
+.iframe-wrapper:active {
+  transform: translate(4px, 4px) scale(0.98) translateZ(0) !important;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.15) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
 
 /* --- 12. RESPONSIVE MOBILE FIXES --- */
 @media (max-width: 768px) {
