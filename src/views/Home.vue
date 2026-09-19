@@ -99,14 +99,14 @@ const getButtonConfig = (action) => {
         <div class="manifesto-text">
           <h2>WHAT IS GATO?</h2>
           <p>
-            GATO IS AN INDEPENDENT RECORD LABEL, ARTIST COLLECTIVE, AND MANAGEMENT BASED IN SWITZERLAND. WE PUSH EMERGING TALENTS, BUILD RICH ARTISTIC UNIVERSES, AND HANDLE EVERYTHING FROM SOUND TO VISUALS.
+            GATO IS AN INDEPENDENT RECORD LABEL AND CREATIVE HOUSE BASED IN SWITZERLAND. A DEDICATED STRUCTURE BUILT AROUND A CORE ROSTER OF ARTISTS.
           </p>
         </div>
 
         <div class="stats-box">
           <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">ARTISTS & PARTNERS</span></div>
           <div class="stat-item"><span class="stat-number">13</span><span class="stat-label">RELEASES</span></div>
-          <div class="stat-item"><span class="stat-number">22K+</span><span class="stat-label">TOTAL STREAMS</span></div>
+          <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">INDEPENDENT</span></div>
         </div>
       </div>
 

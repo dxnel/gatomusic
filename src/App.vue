@@ -67,7 +67,7 @@
         SWITZERLAND<br>
         Made with love ● lyndxn, Head Of GATO<br>
         <a href="mailto:gatomusic.contact@gmail.com">gatomusic.contact@gmail.com</a><br>
-        IG: <a href="https://instagram.com/gato.records" target="_blank">@GATO.RECORDS</a>
+        IG: <a href="https://instagram.com/gato.ltd" target="_blank">@GATO.LTD</a>
       </div>
       <div class="barcode-massive"></div>
     </footer>
